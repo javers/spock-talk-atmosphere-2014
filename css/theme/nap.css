@@ -1,5 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&subset=latin,latin-ext);
-@import url(https://fonts.googleapis.com/css?family=Monda:400,700&subset=latin,latin-ext);
+@import url(../google_fonts_monda.css);
+@import url(../google_fonts_sans.css);
+
+#slimTable td {
+    padding:0.5ex;
+}
+#slimTable td {
+    vertical-align:middle;
+    border-right: 0px;
+}
+
 /**
  * NAP theme for reveal.js.
  */
@@ -80,7 +89,7 @@ body {
  * LINKS
  *********************************************/
 .reveal a:not(.image) {
-  color: #ff5a00;
+  color: #3A87AD;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
@@ -89,7 +98,7 @@ body {
   transition: color .15s ease; }
 
 .reveal a:not(.image):hover {
-  color: #ff9c66;
+  color: #3A87AD;
   text-shadow: none;
   border: none; }
 
