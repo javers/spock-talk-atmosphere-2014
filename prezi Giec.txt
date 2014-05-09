@@ -35,6 +35,7 @@
  -
  - nazywam siê Bartek Walacik , jestem team-leaderem, w warszawie od roku
  - uœmiech!
+ - g³oœno !!!
   * najpierw zdefiniowaæ *
  - bêdziemy rozmawiaæ o najlepszym na¿êdziu czyli : Spocku
  - cel dla Was, z czym wyjdziecie, jak skorzystacie
@@ -46,29 +47,32 @@
 
   *** uœmiech, gesty! ***
   BW.
-  1. Nazywam siê Bartek Walacik
+  1. Czeœæ! Nazywam siê Bartek Walacik
      Pracujê w warszawskim Allegro,
      jako Team Leader zespo³u developerskiego.
-     Po godzinach dzia³am (wspólnie z Paw³em) w open-source'owym projekcie Javers.
-     TDD i Jav¹ zajmujê siê od wielu lat, pamiêtam czasy kiedy Java to by³ œmieszny jêzyk do pisania animacji w przegl¹rarce..
+     Po godzinach, pracujê (wspólnie z Paw³em) nad open-source'owym projektem
+     o nazwie JaVers.
+     TDD i Jav¹ zajmujê siê od wielu lat, pamiêtam czasy kiedy Java to by³ œmieszny
+     jêzyk do pisania animacji w przegl¹darce... które strasznie ...
 
   P.S
   1. Nazywam siê Pawe³ Szymczyk ... bum bum bum
 
-  B.W.
+  P.S
   2. przez najbli¿sze 40 min,
      bêdziemy rozmawiaæ o Spocku, czyli najlepszeym obecnie frameworku
-     do tesowania aplikacji dzia³aj¹cych na JVM.
+     do tesowania aplikacji dzia³aj¹cych na JVM'em
 
+  B.W
   3. Zapewniam, ¿e po tej prezentacji,
-     wyjdziecie z wiedz¹ o tym czym jest Spock.
-
-     Bêdziecie mieli jasne argumenty, ¿e:
-      - Spock daje niezwyk³ego kopa do produktywnoœci developerów
-      - ma bardzo niski próg wejœcia
-      - znakomicie u³atwia pisanie dobrych testów
-        i osi¹gniêcie wysokiego Coverage
-      - pisanie testów w Spocku stanie siê dla Was prawdziw¹ przyjemnoœci¹
+     zdobêdziecie wiedzê o Spock'u i
+     bêdziecie mieli jasne argumenty za tym, ¿e:
+      1. Spock znakomicie u³atwia pisanie dobrych testów
+         i osi¹gniêcie wysokiego Coverage
+      2. daje niezwyk³ego kopa do produktywnoœci developerów
+      3. ma bardzo niski próg wejœcia
+      4. A co najwa¿niejsze, pisanie testów w Spocku jest
+         prawdziw¹ przyjemnoœci¹
 
   P.S.
   4. Agenda: plan jest taki,
