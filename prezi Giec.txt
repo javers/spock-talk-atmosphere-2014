@@ -44,19 +44,23 @@
  - szczegó³y techniczne dalej
  Pierwsze slajdy mega lekkie
 
-  *** uœmiech ***
+  *** uœmiech, gesty! ***
   1. kim jestem
+     TL
+     TDD od dziesiêciu lat
 
   2. bêdziemy rozmawiaæ o Spocku, czyli najlepszeym obecnie frameworku
-     do tesowania aplikacji napisanych w jêzyku Java
+     do tesowania aplikacji dzia³aj¹cych na JVM
 
-  3. Agenda: plan jest taki,
+  3. mam nadziejê, ¿e zaczniecie u¿ywaæ Spocka i dziêki temu
+     pisanie testów stanie siê dla Was prawdziw¹ przyjemnoœci¹
+
+  4. Agenda: plan jest taki,
      - najpierw bêdzie trochê teorii,
      - potem przestaniemy przynudzaæ i poka¿emy kod
      - live coding, migracja testów z JUnitu na Spocka
 
-  4. mam nadziejê, ¿e zaczniecie u¿uwaæ Spocka i dziêki temu
-     pisanie testów stanie siê dla Was prawdziw¹ przyjemnoœci¹
+
 
 
 
