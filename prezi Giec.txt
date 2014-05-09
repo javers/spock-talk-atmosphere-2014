@@ -45,23 +45,37 @@
  Pierwsze slajdy mega lekkie
 
   *** uœmiech, gesty! ***
-  1. kim jestem
-     TL
-     TDD od dziesiêciu lat
+  BW.
+  1. Nazywam siê Bartek Walacik
+     Pracujê w warszawskim Allegro,
+     jako Team Leader zespo³u developerskiego.
+     Po godzinach pracujê nad (wspólnie z Paw³em) nad open-source'owym projektem Javers.
+     TDD i Jav¹ zajmujê siê od wielu lat, pamiêtam czasy kiedy Java to by³ œmieszny jêzyk do pisania animacji w przegl¹rarce..
 
+  P.S
+  1. Nazywam siê Pawe³ Szymczyk ... bum bum bum
+
+  B.W.
   2. bêdziemy rozmawiaæ o Spocku, czyli najlepszeym obecnie frameworku
      do tesowania aplikacji dzia³aj¹cych na JVM
 
+  B.W.
   3. mam nadziejê, ¿e zaczniecie u¿ywaæ Spocka i dziêki temu
      pisanie testów stanie siê dla Was prawdziw¹ przyjemnoœci¹
 
+  P.S.
   4. Agenda: plan jest taki,
      - najpierw bêdzie trochê teorii,
      - potem przestaniemy przynudzaæ i poka¿emy kod
      - live coding, migracja testów z JUnitu na Spocka
 
 
+Druga osoba - te¿ gra:
+- utrzymuje kontakt z widowni¹
+- patrzy na kolegê jak w obrazek
 
+ Razem:
+- dynamizm, wyrerzyserowany spór
 
 
 
