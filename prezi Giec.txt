@@ -49,23 +49,31 @@
   1. Nazywam siê Bartek Walacik
      Pracujê w warszawskim Allegro,
      jako Team Leader zespo³u developerskiego.
-     Po godzinach pracujê nad (wspólnie z Paw³em) nad open-source'owym projektem Javers.
+     Po godzinach dzia³am (wspólnie z Paw³em) w open-source'owym projekcie Javers.
      TDD i Jav¹ zajmujê siê od wielu lat, pamiêtam czasy kiedy Java to by³ œmieszny jêzyk do pisania animacji w przegl¹rarce..
 
   P.S
   1. Nazywam siê Pawe³ Szymczyk ... bum bum bum
 
   B.W.
-  2. bêdziemy rozmawiaæ o Spocku, czyli najlepszeym obecnie frameworku
-     do tesowania aplikacji dzia³aj¹cych na JVM
+  2. przez najbli¿sze 40 min,
+     bêdziemy rozmawiaæ o Spocku, czyli najlepszeym obecnie frameworku
+     do tesowania aplikacji dzia³aj¹cych na JVM.
 
-  B.W.
-  3. mam nadziejê, ¿e zaczniecie u¿ywaæ Spocka i dziêki temu
-     pisanie testów stanie siê dla Was prawdziw¹ przyjemnoœci¹
+  3. Zapewniam, ¿e po tej prezentacji,
+     wyjdziecie z wiedz¹ o tym czym jest Spock.
+
+     Bêdziecie mieli jasne argumenty, ¿e:
+      - Spock daje niezwyk³ego kopa do produktywnoœci developerów
+      - ma bardzo niski próg wejœcia
+      - znakomicie u³atwia pisanie dobrych testów
+        i osi¹gniêcie wysokiego Coverage
+      - pisanie testów w Spocku stanie siê dla Was prawdziw¹ przyjemnoœci¹
 
   P.S.
   4. Agenda: plan jest taki,
      - najpierw bêdzie trochê teorii,
+       w tym czasie porównamy te¿ Spocka innymi na¿êdziami
      - potem przestaniemy przynudzaæ i poka¿emy kod
      - live coding, migracja testów z JUnitu na Spocka
 
