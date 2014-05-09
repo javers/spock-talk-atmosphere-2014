@@ -11,8 +11,54 @@
  - spokojnie siê przechadzaæ, zachowuj¹c kontakt wzrokowy
  - patrzymy sektorowo, zmieniaj¹c sektory losowo na wspieraczy
  - postawa, krêgos³up prosty, ramiona luŸno, broda równolegle do pod³ogi
-   (w razie awarii:
-    - zdj¹æ mostek z przepony
-    - wydech, wdech
-    - uœmiech
+   {
+   w razie awarii:
+     - zdj¹æ mostek z przepony
+     - wydech, wdech
+     - uœmiech
+   }
+
+* MIMIKA
+ - lekki uœmiech, !ca³y czas!
+   luz
+   - usta, nie oblizywaæ, woda
+
+ * RÊCE i gad¿ety
+ - rêce s¹ odgromnikiem, gestykulacja - rêce powy¿ej talii, poni¿ej ramion, z przodu!
+ - autog³aski - zabronione!
+ - zero gad¿etów
+ - prezenter i mikroport
+ - odliczanie czasu na smartfonie
+
+
+ DO POPRAWY :
+ -
+ - nazywam siê Bartek Walacik , jestem team-leaderem, w warszawie od roku
+ - uœmiech!
+  * najpierw zdefiniowaæ *
+ - bêdziemy rozmawiaæ o najlepszym na¿êdziu czyli : Spocku
+ - cel dla Was, z czym wyjdziecie, jak skorzystacie
+ - nogi razem
+ - skupiæ wzrok, do 3s.
+ - bez laptopa!
+ - szczegó³y techniczne dalej
+ Pierwsze slajdy mega lekkie
+
+  *** uœmiech ***
+  1. kim jestem
+
+  2. bêdziemy rozmawiaæ o Spocku, czyli najlepszeym obecnie frameworku
+     do tesowania aplikacji napisanych w jêzyku Java
+
+  3. Agenda: plan jest taki,
+     - najpierw bêdzie trochê teorii,
+     - potem przestaniemy przynudzaæ i poka¿emy kod
+     - live coding, migracja testów z JUnitu na Spocka
+
+  4. mam nadziejê, ¿e zaczniecie u¿uwaæ Spocka i dziêki temu
+     pisanie testów stanie siê dla Was prawdziw¹ przyjemnoœci¹
+
+
+
+
 
