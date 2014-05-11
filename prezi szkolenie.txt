@@ -18,10 +18,9 @@
      - uœmiech
    }
 
-* MIMIKA
+ * MIMIKA
  - lekki uœmiech, !ca³y czas!
    luz
-   - usta, nie oblizywaæ, woda
 
  * RÊCE i gad¿ety
  - rêce s¹ odgromnikiem, gestykulacja - rêce powy¿ej talii, poni¿ej ramion, z przodu!
@@ -32,63 +31,62 @@
 
 
  DO POPRAWY :
- -
- - nazywam siê Bartek Walacik , jestem team-leaderem, w warszawie od roku
- - uœmiech!
+ *** uœmiech, gesty! ***
  - g³oœno !!!
-  * najpierw zdefiniowaæ *
- - bêdziemy rozmawiaæ o najlepszym na¿êdziu czyli : Spocku
- - cel dla Was, z czym wyjdziecie, jak skorzystacie
+ * najpierw zdefiniowaæ:
+ - cel dla Was, z czym wyjdziecie, jak skorzystacie *
  - nogi razem
  - skupiæ wzrok, do 3s.
  - bez laptopa!
  - szczegó³y techniczne dalej
  Pierwsze slajdy mega lekkie
 
-  *** uœmiech, gesty! ***
+
+Druga osoba - te¿ gra:
+- utrzymuje kontakt z widowni¹
+- patrzy na kolegê jak w obrazek
+  Razem:
+  - dynamizm, wyrerzyserowany spór
+
+- Na koniec
+Jakie macie pytanie.
+Jeœli nie checie pytaæ na forum, to jesteœmy w kuluarach do koñca dnia, i chêtnie porozmawiamy jeszcze.
+
+
+Our Intro - 2 min
   BW.
   1. Czeœæ! Nazywam siê Bartek Walacik
-     Pracujê w warszawskim Allegro,
-     jako Team Leader zespo³u developerskiego.
-     Po godzinach, pracujê (wspólnie z Paw³em) nad open-source'owym projektem
-     o nazwie JaVers.
-     TDD i Jav¹ zajmujê siê od wielu lat, pamiêtam czasy kiedy Java to by³ œmieszny
-     jêzyk do pisania animacji w przegl¹darce... które strasznie ...
+     - Pracujê w Grupie Allegro,
+       jako Leader zespo³u developerskiego.
+     - Po godzinach, pracujê nad open-source'owym projektem o nazwie JaVers.
+     - Jav¹ zajmujê siê od wielu lat, pamiêtam czasy kiedy o TDD nikt jeszcze nie s³ysza³
+       a Java to by³ œmieszny jêzyk do pisania appletów w przegl¹darce ... które strasznie ...
 
   P.S
   1. Nazywam siê Pawe³ Szymczyk ... bum bum bum
 
   P.S
-  2. przez najbli¿sze 40 min,
+  2. Przez najbli¿sze 40 min,
      bêdziemy rozmawiaæ o Spocku, czyli najlepszeym obecnie frameworku
      do tesowania aplikacji dzia³aj¹cych na JVM'em
 
   B.W
-  3. Zapewniam, ¿e po tej prezentacji,
-     zdobêdziecie wiedzê o Spock'u i
-     bêdziecie mieli jasne argumenty za tym, ¿e:
-      1. Spock znakomicie u³atwia pisanie dobrych testów
-         i osi¹gniêcie wysokiego Coverage
-      2. daje niezwyk³ego kopa do produktywnoœci developerów
-      3. ma bardzo niski próg wejœcia
-      4. A co najwa¿niejsze, pisanie testów w Spocku jest
-         prawdziw¹ przyjemnoœci¹
-
+  3. Dobrze, ktoœ zapyta ale po co mi Spock?
+      - ¯eby odpowiedzieæ na to pytanie, pos³u¿ê siê metafor¹.
+        WyobraŸcie sobie, ¿e gracie w Diablo III i znajdujecie artefakt o nazwie Spock.
+      - Bierzecie go do ³apy, patrzycie na statystyki, i co siê dzieje:
+        * velocity +10           (scrumowe, nie samochodowa)
+        * code readability +5    (wreszcie rozumiecie testy, które napisa³ wasz kolega z zespo³u)
+        * documentation +10      (wasze testy staj¹ siê lepsz¹ dokumentacj¹ wymagañ)
+        * coverage + 10          (coverage jest wa¿ny, dyrektorzy go lubi¹)
+        * code repetition -5     (...
+        * fun +50                (pisanie testów w Spocku jest prawdziw¹ przyjemnoœci¹)
   P.S.
   4. Agenda: plan jest taki,
      - najpierw bêdzie trochê teorii,
        w tym czasie porównamy te¿ Spocka innymi na¿êdziami
      - potem przestaniemy przynudzaæ i poka¿emy kod
      - live coding, migracja testów z JUnitu na Spocka
-
-
-Druga osoba - te¿ gra:
-- utrzymuje kontakt z widowni¹
-- patrzy na kolegê jak w obrazek
-
- Razem:
-- dynamizm, wyrerzyserowany spór
-
 
 
 
