@@ -9,6 +9,14 @@
     border-right: 0px;
 }
 
+#slimTable th {
+    padding:0.5ex;
+}
+#slimTable th {
+    vertical-align:middle;
+    border-right: 0px;
+}
+
 .label_mid {
     width: 4ex;
     display: inline-block;
@@ -214,8 +222,13 @@ body {
     font-weight: bold; }
   .reveal table td {
     padding: .4em 1em; }
-  .reveal table td, .reveal table th {
-    border-right: 3px solid #ddd; }
+  .reveal table td {
+      border-right: 3px solid #ddd;
+  }
+  .reveal table th {
+    color: #3A87AD; font-weight: normal;
+    border-right: 3px solid #ddd;
+  }
   .reveal table th:last-child,
   .reveal table td:last-child {
     border-right: 0; }

@@ -83,6 +83,8 @@ Our Intro - 2 min
   P.S. Zapomnia³eœ o tym co jest najwa¿niejsze, czyli
         * fun +50                (pisanie testów w Spocku jest prawdziw¹ przyjemnoœci¹)
 
+
+
   P.S.
   4. Agenda: plan jest taki,
      1. najpierw bêdzie trochê teorii,
