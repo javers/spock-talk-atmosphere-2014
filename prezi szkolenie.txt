@@ -80,13 +80,16 @@ Our Intro - 2 min
         * documentation +10      (wasze testy staj¹ siê lepsz¹ dokumentacj¹ wymagañ)
         * coverage + 10          (coverage jest wa¿ny, dyrektorzy go lubi¹)
         * code repetition -5     (...
+  P.S. Zapomnia³eœ o tym co jest najwa¿niejsze, czyli
         * fun +50                (pisanie testów w Spocku jest prawdziw¹ przyjemnoœci¹)
+
   P.S.
   4. Agenda: plan jest taki,
-     - najpierw bêdzie trochê teorii,
-       w tym czasie porównamy te¿ Spocka innymi na¿êdziami
-     - potem przestaniemy przynudzaæ i poka¿emy kod
-     - live coding, migracja testów z JUnitu na Spocka
+     1. najpierw bêdzie trochê teorii,
+        w tym czasie porównamy te¿ Spocka innymi na¿êdziami
+     2. potem przestaniemy przynudzaæ i poka¿emy kod
+     3. live coding, migracja testów z JUnitu na Spocka
+
 
 
 
