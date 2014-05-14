@@ -64,9 +64,14 @@
                         <li class="fragment"><div class="label_mid">+10</div> to Documentation </li>
                         <li class="fragment"><div class="label_mid">+10</div> to Coverage </li>
                         <li class="fragment"><div class="label_mid">-5</div> to Code Repetition </li>
-                        <li class="fragment"><strong><div class="label_mid">+50</div> to Fun</strong> </li>
+                        <!--<li class="fragment"><strong><div class="label_mid">+50</div> to Fun</strong> </li>-->
                     </ul>
                 </section>
+                
+                <section>
+                    <img src="img/50_to_fun.jpg">
+                </section>
+                    
 
                 <section>
                     <table id="slimTable">
@@ -169,6 +174,192 @@
                 </section>
 
                 <section>
+                    <h3>BDD Style Spock Test</h3>
+<pre><code>def "should accept series of valid coin and then display credit"() {
+
+    given:
+    def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+                                            Stub(CoinCassette))
+
+    when:
+    vendingMachine.insert QUARTER
+
+    then:
+    vendingMachine.display == "CREDIT 0.25"
+}</code></pre>
+
+                </section>
+
+                <section>
+                    <h3>Assertions in then/expect section</h3>
+<code><pre>def "should evaluate assertions with Groovy Truth"() {
+
+    expect:
+    //boolean expresions
+    assert true
+    !false
+
+    // Collection & maps
+    [1]          //non-empty collection -> true
+    ['one': 1]   //non-empty map        -> true
+
+    ![]          //empty collection     -> false
+    ![:]         //empty map            -> false
+
+    // Number
+    1            //non-zero             -> true
+    !0           //zero                 -> false
+
+    // Strings
+    'a'          //non-empty            -> true
+    ' '          //non-empty            -> true
+    !''          //empty                -> false
+
+    // Object references
+    this         //not null             -> true
+    !null        //null                 -> false
+}</pre></code>
+                </section>
+                
+                <section>
+                    <h3>Reporting failures</h3>
+                    <img src="img/reporting_of_failures.png">
+                </section>
+
+                <section>
+                    <h3>Data driven</h3>
+
+
+<pre><code>@Unroll
+def "should round #givenValue.class.simpleName #givenValue to #expectedValue"() {
+
+    when:
+    def result = Money.round2(givenValue)
+
+    then:
+    result == expectedValue
+
+    where:
+    givenValue                       | expectedValue
+    0.339d                           | 0.34
+    0.22d                            | 0.22
+    0.1d                             | 0.1
+    new BigDecimal(2.333, DECIMAL32) | 2.33
+}</code></pre>
+                </section>
+
+                <section>
+                    <h3>@Unroll</h3>
+                    <img src="img/data_driven.png">
+                    
+                </section>
+
+                <section>
+                    <h3>Verify exceptions</h3>
+<pre><code>def "should throw exception when try to insert null"() {
+
+    given:
+    def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+                                            Stub(CoinCassette))
+
+    when:
+    vendingMachine.insert null
+
+    then:
+    def exception = thrown IllegalArgumentException
+    exception.message == "coin can't be null"
+}</code></pre>
+                </section>
+
+                <section>
+                    <h3>Mock</h3>
+<pre><code>def "should check that money fall into coin cassette"() {
+
+    given:
+    def coinCassetteMock = Mock(CoinCassette)
+    def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+                                            coinCassetteMock)
+
+    when:
+    vendingMachine.insert QUARTER
+
+    then:
+    1 * coinCassetteMock.push(QUARTER)
+}</code></pre>
+                </section>
+
+                <section>
+                    <h3>Stub</h3>
+<pre><code>def "should return coin when coin cassette is full"() {
+
+    given:
+    def coinCassetteMock = Stub(CoinCassette) {
+        isFull(_ as Coin) >> true
+    }
+
+    def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+                                            coinCassetteMock)
+
+    when:
+    def returnedCoin = vendingMachine.insert QUARTER
+
+    then:
+    returnedCoin.get() == QUARTER
+}</code></pre>
+                </section>
+
+                <section>
+                    <h3>Imagine that you have to stub this...</h3>
+<pre><code>
+    class DummyContainer {
+
+        String getString() {}
+
+        Long getLong() {}
+
+        BigDecimal getBigDecimal() {}
+
+        List getList() {}
+
+        VendingMachine getVendingMachine() {}
+
+        DummyContainer getDummyContainer() {}
+    }
+
+</code></pre>
+                </section>
+                
+                <section>
+                    <img src="img/spock-facepalm.png">
+                </section>
+
+                    <section>
+                        <h3>Stub default value</h3>
+
+<pre><code>def "should return default value for all not primitive types"() {
+
+    when:
+    def stub = Stub(DummyContainer)
+
+    then:
+    stub.string == ""
+    stub.long == 0
+    stub.bigDecimal == 0
+    stub.list == []
+
+    stub.vendingMachine
+    stub.vendingMachine.cassette != null
+    stub.vendingMachine.magazine != null
+
+    stub.dummyContainer.dummyContainer.dummyContainer.list == []
+}</code></pre>
+                    </section>
+                
+                <section>
+                    <img src="img/spock_approves.jpg">
+                </section>
+
+                <section>
                     <h2>Dziękujemy za uwagę!</h2>
 
                     <h2>Q & A ... </h2>
@@ -178,7 +369,7 @@
                     <h3>Contact us</h3>
 
                     <table id="slimTable">
-                        <tr> <td>Paweł Szymczyk  </td> <td><a href="http://javers.org">javers.org</a></td> <td> </td></tr>
+                        <tr> <td>Paweł Szymczyk  </td> <td><a href="http://javers.org">javers.org</a></td> <td><a>pawel.szymczyk90@gmail.com</a> </td></tr>
                         <tr> <td>Bartosz Walacik </td> <td><a href="http://javers.org">javers.org</a></td> <td><a>bwalacik@gmail.com</a></td></tr>
                     </table>
 
