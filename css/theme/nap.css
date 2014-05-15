@@ -2,19 +2,30 @@
 @import url(../google_fonts_sans.css);
 
 #slimTable td {
-    padding:0.5ex;
+    padding: 0.5ex;
+    vertical-align: middle;
+    border-right: 0px;
 }
-#slimTable td {
+#slimTable th {
+    padding:0.5ex;
     vertical-align:middle;
     border-right: 0px;
 }
 
-#slimTable th {
+#rowsTable td{
     padding:0.5ex;
-}
-#slimTable th {
     vertical-align:middle;
     border-right: 0px;
+    border-top: 1px solid #DDD;
+}
+#rowsTable th{
+    padding:0.5ex;
+    vertical-align:middle;
+    border-right: 0px;
+}
+
+.reveal code {
+    color: black;
 }
 
 .label_mid {
