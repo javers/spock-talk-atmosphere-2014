@@ -11,7 +11,6 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <link rel="stylesheet" href="css/bootstrap.3.1.1.min.css">
         <link rel="stylesheet" href="css/reveal.min.css">
         <link rel="stylesheet" href="css/theme/nap.css" id="theme">
 
@@ -97,32 +96,18 @@
                         <td>&raquo; &nbsp; &nbsp; readable to humans</td>
                     </tr>
 
-
                     </table>
 
                 </section>
 
-
-
-                </section>
-
-<!--
-                    <section>
-                        <h3>What Spock can do for me?</h3>
-                        <ul>
-                            <li><code>Groovy</code> based</li>
-                            <li class="fragment">inspired from many fascinating life forms</li>
-                            <li class="fragment">all-in-one framework</li>
-                            <li class="fragment">its beautiful</li>
-                        </ul>
-                    </section>
-    -->
-
                 <section>
                     <h2>Big Picture</h2>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10">
+                </section>
+
+                <section>
+                <table>
+                    <tr>
+                    <td class="unstyled">
                     <table id="rowsTable">
                         <tr>
                             <th>Approach</th>
@@ -131,16 +116,13 @@
                             <th>Frameworks</th>
                         </tr>
                         <tr>
-                            <td><code>TDD</code></td>
-                            <td>unit test</td>
-                            <td>forget</td>
-                            <td><small><a>Junit</a>, <a href="http://testng.org">TestNG</a></small></td>
-                        </tr>
-                        <tr>
-                            <td><code>Spec by example</code></td>
-                            <td>examples table</td>
-                            <td>excellent</td>
-                            <td><small><a href="http://www.fitnesse.org">FitNesse</a></small></td>
+                            <td><code>Spec-based</code> <code>BDD</code></td>
+                            <td>specification</td>
+                            <td>moderate</td>
+                            <td><a href="http://docs.spockframework.org">Spock</a><br/>
+                                <small><a href="http://jasmine.github.io/">Jasmine JS</a></small>
+
+                            </td>
                         </tr>
                         <tr>
                             <td><code>Classical BDD</code></td>
@@ -151,21 +133,51 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><code>Spec-based BDD</code></td>
-                            <td>specification</td>
-                            <td>moderate</td>
-                            <td><a href="http://docs.spockframework.org">Spock</a><br/>
-                                <small><a href="http://jasmine.github.io/">Jasmine JS</a></small>
-
-                            </td>
+                            <td><code>Spec by example</code></td>
+                            <td>examples table</td>
+                            <td>excellent</td>
+                            <td><small><a href="http://www.fitnesse.org">FitNesse</a></small></td>
+                        </tr>
+                        <tr>
+                            <td><code>TDD</code></td>
+                            <td>unit test</td>
+                            <td>forget</td>
+                            <td><small><a>Junit</a>, <a href="http://testng.org">TestNG</a></small></td>
                         </tr>
 
                     </table>
+                    </td>
+                    <td class="unstyled">
+                            <img src="img/drawing_1.svg"/></td>
+                    </tr>
+                    </table>
 
-                    </div>
-                    <div class="col-md-2">...</div>
-                </div>
-            </div>
+
+                </section>
+
+                <section>
+                    <h3>Spock highlights</h3>
+                    <ul>
+                        <li>all-in-one test framework</li>
+                        <li>based on <code>Groovy</code> </li>
+                        <li>easy to learn</li>
+                        <li>inspired from <code>JUnit, jMock, RSpec, Groovy, Scala, Vulcans</code></li>
+                        <li>uses JUnit runner<br/> so just works with <code>Java IDE, CI & build tools</code>
+                        <li>its beautiful</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Groovy</h3>
+                    <ul class="unstyled">
+                        <li>is it OK to writing large apps in Groovy?</li>
+                    </ul>
+                    <ul>
+                        <li >definitely, it's perfect for writing tests</li>
+                        <li >modern, dynamic, duck typing</li>
+                        <li >syntax is concise yet powerful</li>
+                        <li >no <code>Java</code> Baroque</li>
+                    </ul>
                 </section>
 
                 <section>
@@ -173,33 +185,39 @@
                 </section>
 
                 <section>
-                    <h3>Groovy for tests</h3>
-                    <ul class="unstyled">
-                        <li>is it eligible for writing large, Enterprise apps?</li>
-                    </ul>
-                    <ul>
-                        <li class="fragment">definitely, it's perfect for writing tests</li>
-                        <li class="fragment">modern, dynamic, duck typing</li>
-                        <li class="fragment">syntax is concise yet powerful</li>
-                        <li class="fragment">no <code>Java</code> Baroque</li>
-                    </ul>
+                <h3>Good JUnit BDD-style test</h3>
+<pre><code>public class MapTest {
 
+    @Test
+    public void shouldStoreValueInHashMapAndRetrieveItByKey() {
+        //given:
+        Map&lt;String,Integer&gt; map = new HashMap&lt;&gt;();
+
+        //when:
+        map.put("myKey", 5);
+
+        //then:
+        Assert.assertEquals(map.get("myKey"), 5);
+        Assert.assertNull(map.get("anything"));
+    }
+}</code></pre>
                 </section>
 
                 <section>
-                    <h3>BDD Style Spock Test</h3>
-<pre><code>
-    def "should accept series of valid coin and then display credit"() {
+                    <h3>Spock BDD Test</h3>
+<pre><code>class MapTest extends Specification {
 
-    given:
-    def vendingMachine = new VendingMachine(Stub(ProductMagazine),
-                                            Stub(CoinCassette))
+    def "should store value in HashMap and retrieve it by key" () {
+        given:
+            def map = new HashMap()
 
-    when:
-    vendingMachine.insert QUARTER
+        when:
+            map.put("myKey", 5)
 
-    then:
-    vendingMachine.display == "CREDIT 0.25"
+        then:
+            map.myKey == 5
+            map.anything == null
+    }
 }</code></pre>
 
                 </section>
@@ -414,7 +432,7 @@ def "should round #givenValue.class.simpleName #givenValue to #expectedValue"() 
                 history: true,
                 center: true,
                 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
 
                 // Optional libraries used to extend on reveal.js
                 dependencies: [
@@ -429,7 +447,7 @@ def "should round #givenValue.class.simpleName #givenValue to #expectedValue"() 
                         }},
                     {src: 'plugin/highlight/highlight.min.js', async: true, callback: function() {
                                 hljs.configure({
-                                    languages: ['ruby']
+                                    languages: ['ruby','java']
                                 })
                             hljs.initHighlightingOnLoad();
                         }},
