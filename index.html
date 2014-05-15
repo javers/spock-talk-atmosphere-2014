@@ -189,36 +189,57 @@
 <pre><code>public class MapTest {
 
     @Test
-    public void shouldStoreValueInHashMapAndRetrieveItByKey() {
+    public void shouldAddAllItemsFromOneListToAnother() {
         //given:
-        Map&lt;String,Integer&gt; map = new HashMap&lt;&gt;();
+        List&lt;String&gt; baseList = Lists.newArrayList("one", "two");
+        List&lt;String&gt; addMe = Lists.newArrayList("three", "four");
 
         //when:
-        map.put("myKey", 5);
+        baseList.addAll(addMe);
 
         //then:
-        Assert.assertEquals(map.get("myKey"), 5);
-        Assert.assertNull(map.get("anything"));
+        Assert.assertEquals(Arrays.asList("one", "two", "three", "four"),baseList);
     }
 }</code></pre>
                 </section>
 
                 <section>
+                    <section>
                     <h3>Spock BDD Test</h3>
 <pre><code>class MapTest extends Specification {
 
-    def "should store value in HashMap and retrieve it by key" () {
+    def "should add all items from one list to another" ()
+    {
         given:
-            def map = new HashMap()
+            def baseList = ["one", "two"]
+            def addMe = ["three", "four"]
 
         when:
-            map.put("myKey", 5)
+            baseList.addAll addMe
 
         then:
-            map.myKey == 5
-            map.anything == null
+            baseList == ["one", "two", "three", "four"]
     }
 }</code></pre>
+                    </section>
+
+                    <section>
+<code>class MapTest extends Specification {
+
+    def "should add all items from one list to another" ()
+    {
+    given:
+    def baseList = ["one", "two"]
+    def addMe = ["three", "four"]
+
+    when:
+    baseList.addAll addMe
+
+    then:
+    baseList == ["one", "two", "three", "four"]
+    }
+    }</code>
+                    </section>
 
                 </section>
 
