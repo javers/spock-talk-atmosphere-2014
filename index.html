@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="css/theme/nap.css" id="theme">
 
         <!-- For syntax highlighting -->
-        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="lib/css/googlecode.css">
 
         <!-- If the query includes 'print-pdf', use the PDF print sheet -->
         <script>
@@ -188,7 +188,8 @@
 
                 <section>
                     <h3>BDD Style Spock Test</h3>
-<pre><code>def "should accept series of valid coin and then display credit"() {
+<pre><code>
+    def "should accept series of valid coin and then display credit"() {
 
     given:
     def vendingMachine = new VendingMachine(Stub(ProductMagazine),
@@ -205,7 +206,8 @@
 
                 <section>
                     <h3>Assertions in then/expect section</h3>
-<code><pre>def "should evaluate assertions with Groovy Truth"() {
+<pre><code>
+    def "should evaluate assertions with Groovy Truth"() {
 
     expect:
     //boolean expresions
@@ -231,7 +233,7 @@
     // Object references
     this         //not null             -> true
     !null        //null                 -> false
-}</pre></code>
+}</code></pre>
                 </section>
                 
                 <section>
@@ -425,7 +427,10 @@ def "should round #givenValue.class.simpleName #givenValue to #expectedValue"() 
                     {src: 'plugin/markdown/markdown.js', condition: function() {
                             return !!document.querySelector('[data-markdown]');
                         }},
-                    {src: 'plugin/highlight/highlight.js', async: true, callback: function() {
+                    {src: 'plugin/highlight/highlight.min.js', async: true, callback: function() {
+                                hljs.configure({
+                                    languages: ['ruby']
+                                })
                             hljs.initHighlightingOnLoad();
                         }},
                     {src: 'plugin/zoom-js/zoom.js', async: true, condition: function() {
