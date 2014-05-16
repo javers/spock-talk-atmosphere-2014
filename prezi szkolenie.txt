@@ -59,8 +59,6 @@ Our Intro - 2 min
      - Pracujê w Grupie Allegro,
        jako Leader zespo³u developerskiego.
      - Po godzinach, pracujê nad open-source'owym projektem o nazwie JaVers.
-     - Jav¹ zajmujê siê od wielu lat, pamiêtam czasy kiedy o TDD nikt jeszcze nie s³ysza³
-       a Java to by³ œmieszny jêzyk do pisania appletów w przegl¹darce ... które strasznie ...
 
   P.S
   1. Nazywam siê Pawe³ Szymczyk ... bum bum bum
