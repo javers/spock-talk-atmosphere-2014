@@ -17,6 +17,10 @@
         <!-- For syntax highlighting -->
         <link rel="stylesheet" href="lib/css/googlecode.css">
 
+        <!-- Full screan IMG -->
+        <link rel="stylesheet" href="plugin/fullscrean/fullscreen-img.css">
+
+
         <!-- If the query includes 'print-pdf', use the PDF print sheet -->
         <script>
             document.write('<link rel="stylesheet" href="css/print/' + (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper') + '.css" type="text/css" media="print">');
@@ -68,10 +72,10 @@
                     </ul>
                 </section>
                 
-                <section>
-                    <img src="img/50_to_fun.jpg">
+
+                <section fullscreen-img="img/50_to_fun.jpg" fullscreen-size="contain">
                 </section>
-                    
+
 
                 <section>
                     <table id="slimTable">
@@ -170,7 +174,7 @@
                 <section>
                     <h3>Groovy</h3>
                     <ul class="unstyled">
-                        <li>is it OK to writing large apps in Groovy?</li>
+                        <li class="highCode">is it OK to write large apps in Groovy?</li>
                     </ul>
                     <ul>
                         <li >definitely, it's perfect for writing tests</li>
@@ -198,7 +202,8 @@
         baseList.addAll(addMe);
 
         //then:
-        Assert.assertEquals(Arrays.asList("one", "two", "three", "four"),baseList);
+        Assert.assertEquals(Arrays.asList("one", "two", "three", "four"),
+            baseList);
     }
 }</code></pre>
                 </section>
@@ -552,8 +557,10 @@ def "should round #givenValue.class.simpleName #givenValue to #expectedValue"() 
                     {src: 'plugin/zoom-js/zoom.js', async: true, condition: function() {
                             return !!document.body.classList;
                         }},
-                    {src: 'plugin/notes/notes.js', async: true, condition: function() {
-                            return !!document.body.classList;
+                    // Syntax highlight for <code> elements
+                    { src: 'plugin/fullscrean/fullscreen-img.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() {
+                           return !!document.body.classList;
                         }}
                 ]
             });
