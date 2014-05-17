@@ -1,94 +1,97 @@
 * PRZED
-- oswoiæ siê ze scen¹ wczeœniej
-  du¿o ludzi, super! chcê siê podzieliæ z nimi wiedz¹
-- wy³apaæ wzrokowo naturalnych wspieraczy, uœmiechn¹æ siê do nich, 3x
-  w razie awarii, ³apiemy kontakt z wspieraczem.
-- z³apaæ kontakt z krypto-melancholikami (oni naprawdê myœl¹, 'czy on ma racjê?'),
-  Odczarowaæ ich! (widzê Ciê, jesteœ wa¿ny. Widzê Ciê! mo¿esz byæ! Uœmiechn¹æ siê do nich.)
+- oswoiï¿½ siï¿½ ze scenï¿½ wczeï¿½niej
+  duï¿½o ludzi, super! chcï¿½ siï¿½ podzieliï¿½ z nimi wiedzï¿½
+- wyï¿½apaï¿½ wzrokowo naturalnych wspieraczy, uï¿½miechnï¿½ï¿½ siï¿½ do nich, 3x
+  w razie awarii, ï¿½apiemy kontakt z wspieraczem.
+- zï¿½apaï¿½ kontakt z krypto-melancholikami (oni naprawdï¿½ myï¿½lï¿½, 'czy on ma racjï¿½?'),
+  Odczarowaï¿½ ich! (widzï¿½ Ciï¿½, jesteï¿½ waï¿½ny. Widzï¿½ Ciï¿½! moï¿½esz byï¿½! Uï¿½miechnï¿½ï¿½ siï¿½ do nich.)
 
 * START
- - pierwsze 2 min wykute na blachê
- - spokojnie siê przechadzaæ, zachowuj¹c kontakt wzrokowy
- - patrzymy sektorowo, zmieniaj¹c sektory losowo na wspieraczy
- - postawa, krêgos³up prosty, ramiona luŸno, broda równolegle do pod³ogi
+ - pierwsze 2 min wykute na blachï¿½
+ - spokojnie siï¿½ przechadzaï¿½, zachowujï¿½c kontakt wzrokowy
+ - patrzymy sektorowo, zmieniajï¿½c sektory losowo na wspieraczy
+ - postawa, krï¿½gosï¿½up prosty, ramiona luï¿½no, broda rï¿½wnolegle do podï¿½ogi
    {
    w razie awarii:
-     - zdj¹æ mostek z przepony
+     - zdjï¿½ï¿½ mostek z przepony
      - wydech, wdech
-     - uœmiech
+     - uï¿½miech
    }
 
  * MIMIKA
- - lekki uœmiech, !ca³y czas!
+ - lekki uï¿½miech, !caï¿½y czas!
    luz
 
- * RÊCE i gad¿ety
- - rêce s¹ odgromnikiem, gestykulacja - rêce powy¿ej talii, poni¿ej ramion, z przodu!
- - autog³aski - zabronione!
- - zero gad¿etów
+ * Rï¿½CE i gadï¿½ety
+ - rï¿½ce sï¿½ odgromnikiem, gestykulacja - rï¿½ce powyï¿½ej talii, poniï¿½ej ramion, z przodu!
+ - autogï¿½aski - zabronione!
+ - zero gadï¿½etï¿½w
  - prezenter i mikroport
  - odliczanie czasu na smartfonie
 
 
  DO POPRAWY :
- *** uœmiech, gesty! ***
- - g³oœno !!!
- * najpierw zdefiniowaæ:
+ *** uï¿½miech, gesty! ***
+ - gï¿½oï¿½no !!!
+ * najpierw zdefiniowaï¿½:
  - cel dla Was, z czym wyjdziecie, jak skorzystacie *
  - nogi razem
- - skupiæ wzrok, do 3s.
+ - skupiï¿½ wzrok, do 3s.
  - bez laptopa!
- - szczegó³y techniczne dalej
+ - szczegï¿½y techniczne dalej
  Pierwsze slajdy mega lekkie
 
 
-Druga osoba - te¿ gra:
-- utrzymuje kontakt z widowni¹
-- patrzy na kolegê jak w obrazek
+Druga osoba - teï¿½ gra:
+- utrzymuje kontakt z widowniï¿½
+- patrzy na kolegï¿½ jak w obrazek
   Razem:
-  - dynamizm, wyrerzyserowany spór
+  - dynamizm, wyrerzyserowany spï¿½r
 
 - Na koniec
 Jakie macie pytanie.
-Jeœli nie checie pytaæ na forum, to jesteœmy w kuluarach do koñca dnia, i chêtnie porozmawiamy jeszcze.
+Jeï¿½li nie checie pytaï¿½ na forum, to jesteï¿½my w kuluarach do koï¿½ca dnia, i chï¿½tnie porozmawiamy jeszcze.
 
 
 Our Intro - 2 min
   BW.
-  1. Czeœæ! Nazywam siê Bartek Walacik
-     - Pracujê w Grupie Allegro,
-       jako Leader zespo³u developerskiego.
-     - Po godzinach, pracujê nad open-source'owym projektem o nazwie JaVers.
+  1. Czeï¿½ï¿½! Nazywam siï¿½ Bartek Walacik
+     - Pracujï¿½ w Grupie Allegro,
+       jako Leader zespoï¿½u developerskiego.
+     - Po godzinach, pracujï¿½ nad open-source'owym projektem o nazwie JaVers.
 
   P.S
-  1. Nazywam siê Pawe³ Szymczyk ... bum bum bum
+  1. Nazywam siï¿½ Paweï¿½ Szymczyk, i tak jak Bartek po pracy zajmujÄ™ siÄ™ rozwijaniem Javersa,
+  natomiast zawodowo jestem developerem w grupie allegro
 
   P.S
-  2. Przez najbli¿sze 40 min,
-     bêdziemy rozmawiaæ o Spocku, czyli najlepszeym obecnie frameworku
-     do tesowania aplikacji dzia³aj¹cych na JVM'em
+  2. Przez najbliï¿½sze 40 min,
+     bï¿½dziemy rozmawiaï¿½ o Spocku, czyli najlepszeym obecnie frameworku
+     do tesowania aplikacji dziaï¿½ajï¿½cych na JVM'em
 
   B.W
-  3. Dobrze, ktoœ zapyta ale po co mi Spock?
-      - ¯eby odpowiedzieæ na to pytanie, pos³u¿ê siê metafor¹.
-        WyobraŸcie sobie, ¿e gracie w Diablo III i znajdujecie artefakt o nazwie Spock.
-      - Bierzecie go do ³apy, patrzycie na statystyki, i co siê dzieje:
+  3. Dobrze, ktoï¿½ zapyta ale po co mi Spock?
+      - ï¿½eby odpowiedzieï¿½ na to pytanie, posï¿½uï¿½ï¿½ siï¿½ metaforï¿½.
+        Wyobraï¿½cie sobie, ï¿½e gracie w Diablo III i znajdujecie artefakt o nazwie Spock.
+      - Bierzecie go do ï¿½apy, patrzycie na statystyki, i co siï¿½ dzieje:
         * velocity +10           (scrumowe, nie samochodowa)
-        * code readability +5    (wreszcie rozumiecie testy, które napisa³ wasz kolega z zespo³u)
-        * documentation +10      (wasze testy staj¹ siê lepsz¹ dokumentacj¹ wymagañ)
-        * coverage + 10          (coverage jest wa¿ny, dyrektorzy go lubi¹)
+        * code readability +5    (wreszcie rozumiecie testy, ktï¿½re napisaï¿½ wasz kolega z zespoï¿½u)
+        * documentation +10      (wasze testy stajï¿½ siï¿½ lepszï¿½ dokumentacjï¿½ wymagaï¿½)
+        * coverage + 10          (coverage jest waï¿½ny, dyrektorzy go lubiï¿½)
         * code repetition -5     (...
-  P.S. Zapomnia³eœ o tym co jest najwa¿niejsze, czyli
-        * fun +50                (pisanie testów w Spocku jest prawdziw¹ przyjemnoœci¹)
+  P.S. Bartek zapomniaÅ‚ o najwaÅ¼niejszej statystyce tego artefaktu, czyli
+        * fun +50
+
+       NaprawdÄ™ pisanie testï¿½w w Spocku to prawdziwa przyjemnoÅ›Ä‡
 
 
 
   P.S.
-  4. Agenda: plan jest taki,
-     1. najpierw bêdzie trochê teorii,
-        w tym czasie porównamy te¿ Spocka innymi na¿êdziami
-     2. potem przestaniemy przynudzaæ i poka¿emy kod
-     3. live coding, migracja testów z JUnitu na Spocka
+  4. A wiÄ™c plan jest taki,
+     1. najpierw bï¿½dzie trochï¿½ teorii,
+        w tym czasie porï¿½wnamy teï¿½ Spocka innymi naï¿½ï¿½dziami
+     2. potem przestaniemy przynudzaï¿½ i pokaï¿½emy kod
+     3. a na koniec zrobimy live coding ktÃ³rego gÅ‚Ã³wnym celem jest migracja smutnych JUnit'owy testÃ³w na Spocka
 
 
 

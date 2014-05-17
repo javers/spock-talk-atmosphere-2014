@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
     <head>
         <meta charset="utf-8">
@@ -246,8 +246,8 @@
                     <h3>Spock BDD Test</h3>
 <pre><code>class MapTest extends Specification {
 
-    def "should add all items from one list to another" ()
-    {
+    def "should add all items from one list to another" (){
+
         given:
             def baseList = ["one", "two"]
             def addMe = ["three", "four"]
@@ -265,8 +265,8 @@
                         <h3>Specification</h3>
 <pre class="grayCode"><span class="highCode">class MapTest extends Specification</span> {
 
-    def "should add all items from one list to another" ()
-    {
+    def "should add all items from one list to another" (){
+
         given:
             def baseList = ["one", "two"]
             def addMe = ["three", "four"]
@@ -284,8 +284,8 @@
                         <h3>Feature Method</h3>
 <pre class="grayCode">class MapTest extends Specification {
 
-    <span class="highCode">def "should add all items from one list to another"</span> ()
-    {
+    <span class="highCode">def "should add all items from one list to another"</span> (){
+
         given:
             def baseList = ["one", "two"]
             def addMe = ["three", "four"]
@@ -322,8 +322,7 @@
         <h3>Stimulate</h3>
 <pre class="grayCode">class MapTest extends Specification {
 
-    def "should add all items from one list to another" ()
-    {
+    def "should add all items from one list to another" (){
         given:
             def baseList = ["one", "two"]
             def addMe = ["three", "four"]</span>
@@ -341,8 +340,7 @@
         <h3>Assert expected response</h3>
 <pre class="grayCode">class MapTest extends Specification {
 
-    def "should add all items from one list to another" ()
-    {
+    def "should add all items from one list to another" (){
         given:
             def baseList = ["one", "two"]
             def addMe = ["three", "four"]</span>
@@ -358,123 +356,426 @@
 
 </section>
 
+<!--##################Assertions in then/expect section##############################-->
+                <section>
                 <section>
                     <h3>Assertions in then/expect section</h3>
-<pre><code>
-    def "should evaluate assertions with Groovy Truth"() {
+<pre><code>def "should evaluate assertions with Groovy Truth"() {
 
     expect:
-    //boolean expresions
-    assert true
-    !false
+        //boolean expresions
+        assert true
+        !false
 
-    // Collection & maps
-    [1]          //non-empty collection -> true
-    ['one': 1]   //non-empty map        -> true
+        // Collection & maps
+        [1]          //non-empty collection -> true
+        ['one': 1]   //non-empty map        -> true
+        ![]          //empty collection     -> false
+        ![:]         //empty map            -> false
 
-    ![]          //empty collection     -> false
-    ![:]         //empty map            -> false
+        // Number
+        1            //non-zero             -> true
+        !0           //zero                 -> false
 
-    // Number
-    1            //non-zero             -> true
-    !0           //zero                 -> false
+        // Strings
+        'a'          //non-empty            -> true
+        ' '          //non-empty            -> true
+        !''          //empty                -> false
 
-    // Strings
-    'a'          //non-empty            -> true
-    ' '          //non-empty            -> true
-    !''          //empty                -> false
-
-    // Object references
-    this         //not null             -> true
-    !null        //null                 -> false
+        // Object references
+        this         //not null             -> true
+        !null        //null                 -> false
 }</code></pre>
                 </section>
-                
+
+                    <section>
+                        <h3>Assertions in then/expect section</h3>
+<pre class="grayCode">def "should evaluate assertions with Groovy Truth"() {
+
+    expect:
+        <span class="highCode">//boolean expresions
+        assert true
+        !false                </span>
+
+        // Collection & maps
+        [1]          //non-empty collection -> true
+        ['one': 1]   //non-empty map        -> true
+        ![]          //empty collection     -> false
+        ![:]         //empty map            -> false
+
+        // Number
+        1            //non-zero             -> true
+        !0           //zero                 -> false
+    </pre>
+                    </section>
+
+                    <section>
+                        <h3>Assertions in then/expect section</h3>
+<pre class="grayCode">def "should evaluate assertions with Groovy Truth"() {
+
+    expect:
+        //boolean expresions
+        assert true
+        !false
+
+        <span class="highCode">// Collection & maps
+        [1]          //non-empty collection -> true
+        ['one': 1]   //non-empty map        -> true
+        ![]          //empty collection     -> false
+        ![:]         //empty map            -> false
+        </span>
+        // Number
+        1            //non-zero             -> true
+        !0           //zero                 -> false
+    </pre>
+                    </section>
+
+                    <section>
+                        <h3>Assertions in then/expect section</h3>
+<pre class="grayCode">
+
+        // Collection & maps
+        [1]          //non-empty collection -> true
+        ['one': 1]   //non-empty map        -> true
+        ![]          //empty collection     -> false
+        ![:]         //empty map            -> false
+
+        <span class="highCode">// Number
+        1            //non-zero             -> true
+        !0           //zero                 -> false
+            </span>
+        // Strings
+        'a'          //non-empty            -> true
+        ' '          //non-empty            -> true
+        !''          //empty                -> false
+
+
+</pre>
+                    </section>
+
+                    <section>
+                        <h3>Assertions in then/expect section</h3>
+<pre class="grayCode">
+
+        // Number
+        1            //non-zero             -> true
+        !0           //zero                 -> false
+
+        <span class="highCode">// Strings
+        'a'          //non-empty            -> true
+        ' '          //non-empty            -> true
+        !''          //empty                -> false</span>
+
+        // Object references
+        this         //not null             -> true
+        !null        //null                 -> false
+}
+
+
+
+</pre>
+                    </section>
+
+                    <section>
+                        <h3>Assertions in then/expect section</h3>
+<pre class="grayCode">
+
+        // Strings
+        'a'          //non-empty            -> true
+        ' '          //non-empty            -> true
+        !''          //empty                -> false
+
+        <span class="highCode">// Object references
+        this         //not null             -> true
+        !null        //null                 -> false</span>
+}
+
+
+
+
+
+
+
+</pre>
+                    </section>
+
+                </section>
+<!--######################################################################-->
+
+                <section>
                 <section>
                     <h3>Reporting failures</h3>
-                    <img src="img/reporting_of_failures.png">
+                    <img src="img/reporting_of_failures.png" />
                 </section>
+
+                <section fullscreen-img="img/reporting_of_failures.png" fullscreen-size="contain">
+                </section>
+                </section>
+
+
+<!--################  DATA DRIVEN  ############################################################-->
+                <section>
+
 
                 <section>
                     <h3>Data driven</h3>
-
-
 <pre><code>@Unroll
-def "should round #givenValue.class.simpleName #givenValue to #expectedValue"() {
+def """should round #givenValue.class.simpleName #givenValue
+       to #expectedValue with scale #scale"""() {
 
     when:
-    def result = Money.round2(givenValue)
+        def result = Money.round(givenValue, scale)
 
     then:
-    result == expectedValue
+        result == expectedValue
 
     where:
-    givenValue                       | expectedValue
-    0.339d                           | 0.34
-    0.22d                            | 0.22
-    0.1d                             | 0.1
-    new BigDecimal(2.333, DECIMAL32) | 2.33
+        givenValue                       | scale || expectedValue
+        0.339d                           | 2     || 0.34
+        0.22d                            | 2     || 0.22
+        0.1d                             | 1     || 0.1
+        new BigDecimal(2.333, DECIMAL32) | 2     || 2.33
 }</code></pre>
                 </section>
 
+                    <section>
+                        <h3>Data Tables</h3>
+<pre class="grayCode">@Unroll
+def """should round #givenValue.class.simpleName #givenValue
+       to #expectedValue with scale #scale"""() {
+
+    when:
+        def result = Money.round(givenValue, scale)
+
+    then:
+        result == expectedValue
+
+    where:
+        <span class="highCode">givenValue                       | scale || expectedValue
+        0.339d                           | 2     || 0.34
+        0.22d                            | 2     || 0.22
+        0.1d                             | 1     || 0.1
+        new BigDecimal(2.333, DECIMAL32) | 2     || 2.33</span>
+}</pre>
+                    </section>
+
+                    <section>
+                        <h3>Data Tables</h3>
+<pre class="grayCode">@Unroll
+def """should round #givenValue.class.simpleName #givenValue
+       to #expectedValue with scale #scale"""() {
+
+    when:
+        def result = Money.round(<span class="highCode">givenValue</span>, <span class="highCode">scale</span>)
+
+    then:
+        result == <span class="highCode">expectedValue</span>
+
+    where:
+        <span class="highCode">givenValue</span>                       | <span class="highCode">scale</span> || <span class="highCode">expectedValue</span>
+        0.339d                           | 2     || 0.34
+        0.22d                            | 2     || 0.22
+        0.1d                             | 1     || 0.1
+        new BigDecimal(2.333, DECIMAL32) | 2     || 2.33</span>
+}</pre>
+                    </section>
+
+                    <section>
+                        <h3>Data Tables</h3>
+<pre class="grayCode"><span class="highCode">@Unroll</span>
+def """should round <span class="highCode">#givenValue.class.simpleName #givenValue</span>
+       to <span class="highCode">#expectedValue</span> with scale <span class="highCode">#scale</span>"""()</span> {
+
+    when:
+        def result = Money.round(givenValue, scale)
+
+    then:
+        result == expectedValue
+
+    where:
+        <span class="highCode">givenValue</span>                       | <span class="highCode">scale</span> || <span class="highCode">expectedValue</span>
+        0.339d                           | 2     || 0.34
+        0.22d                            | 2     || 0.22
+        0.1d                             | 1     || 0.1
+        new BigDecimal(2.333, DECIMAL32) | 2     || 2.33
+}</pre>
+                    </section>
+
+                </section>
+<!--#############################################################################################-->
+
                 <section>
+                <section>
+
                     <h3>@Unroll</h3>
                     <img src="img/data_driven.png">
                     
                 </section>
+                <section fullscreen-img="img/data_driven.png" fullscreen-size="contain">
+                </section>
+                </section>
+
+<!--####################### VERIFY EXCEPTIONS ################################################-->
+                <section>
 
                 <section>
                     <h3>Verify exceptions</h3>
 <pre><code>def "should throw exception when try to insert null"() {
 
     given:
-    def vendingMachine = new VendingMachine(Stub(ProductMagazine),
-                                            Stub(CoinCassette))
+        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+                                                Stub(CoinCassette))
 
     when:
-    vendingMachine.insert null
+        vendingMachine.insert null
 
     then:
-    def exception = thrown IllegalArgumentException
-    exception.message == "coin can't be null"
+        def exception = thrown IllegalArgumentException
+        exception.message == "coin can't be null"
 }</code></pre>
                 </section>
+
+                <section>
+                    <h4>methods thrown() and thrown(Class type) in Specification</h4>
+<pre class="grayCode">def "should throw exception when try to insert null"() {
+
+    given:
+        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+        Stub(CoinCassette))
+
+    when:
+        vendingMachine.insert null
+
+    then:
+        def exception = <span class="highCode">thrown IllegalArgumentException</span>
+        exception.message == "coin can't be null"
+}</pre>
+                </section>
+
+                    <section>
+                        <h4>it's easy to look into thrown exception</h4>
+<pre class="grayCode">def "should throw exception when try to insert null"() {
+
+    given:
+        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+        Stub(CoinCassette))
+
+    when:
+        vendingMachine.insert null
+
+    then:
+        <span class="highCode">def exception = thrown IllegalArgumentException
+        exception.message == "coin can't be null"</span>
+}</pre>
+                    </section>
+
+                </section>
+<!--###########################################################################################-->
+
+<!--################ MOCK ###############################################################-->
+                <section>
 
                 <section>
                     <h3>Mock</h3>
 <pre><code>def "should check that money fall into coin cassette"() {
 
     given:
-    def coinCassetteMock = Mock(CoinCassette)
-    def vendingMachine = new VendingMachine(Stub(ProductMagazine),
-                                            coinCassetteMock)
+        def coinCassetteMock = Mock(CoinCassette)
+        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+                                                coinCassetteMock)
 
     when:
-    vendingMachine.insert QUARTER
+        vendingMachine.insert QUARTER
 
     then:
-    1 * coinCassetteMock.push(QUARTER)
+        1 * coinCassetteMock.push(QUARTER)
 }</code></pre>
                 </section>
+
+                    <section>
+                    <h3>Mock</h3>
+<pre class="grayCode">def "should check that money fall into coin cassette"() {
+
+    given:
+        def coinCassetteMock = Mock(CoinCassette)
+        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+                                                coinCassetteMock)
+
+    when:
+        vendingMachine.insert QUARTER
+
+    then:
+        <span class="highCode">1 * coinCassetteMock.push(QUARTER)</span>
+}</pre>
+                </section>
+
+                <section>
+                        <h3>Mock</h3>
+<pre class="grayCode">def "should check that money fall into coin cassette"() {
+
+    given:
+        def coinCassetteMock = Mock(CoinCassette)
+        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+                                                coinCassetteMock)
+
+    when:
+        vendingMachine.insert QUARTER
+
+    then:
+        <span class="highCode">1 * coinCassetteMock.push(_ as Coin)</span>
+}</pre>
+                </section>
+
+                </section>
+
+<!--###########################################################################################-->
+
+<!--#################### STUB ##############################################################-->
+
+                <section>
 
                 <section>
                     <h3>Stub</h3>
 <pre><code>def "should return coin when coin cassette is full"() {
 
     given:
-    def coinCassetteMock = Stub(CoinCassette) {
-        isFull(_ as Coin) >> true
-    }
+        def coinCassetteMock = Stub(CoinCassette) {
+            isFull(_ as Coin) >> true
+        }
 
-    def vendingMachine = new VendingMachine(Stub(ProductMagazine),
-                                            coinCassetteMock)
+        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+                                                coinCassetteMock)
 
     when:
-    def returnedCoin = vendingMachine.insert QUARTER
+        def returnedCoin = vendingMachine.insert QUARTER
 
     then:
-    returnedCoin.get() == QUARTER
+        returnedCoin.get() == QUARTER
 }</code></pre>
+                </section>
+
+                <section>
+                    <h3>Stub</h3>
+<pre class="grayCode">def "should return coin when coin cassette is full"() {
+
+    given:
+        <span class="highCode">def coinCassetteMock = Stub(CoinCassette) {
+            isFull(_ as Coin) >> true
+        }</span>
+
+        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+                                                coinCassetteMock)
+
+    when:
+        def returnedCoin = vendingMachine.insert QUARTER
+
+    then:
+        returnedCoin.get() == QUARTER
+}
+</pre>
+                </section>
+
+
                 </section>
 
                 <section>
@@ -502,32 +803,286 @@ def "should round #givenValue.class.simpleName #givenValue to #expectedValue"() 
                     <img src="img/spock-facepalm.png">
                 </section>
 
+                <section>
                     <section>
                         <h3>Stub default value</h3>
 
 <pre><code>def "should return default value for all not primitive types"() {
 
     when:
-    def stub = Stub(DummyContainer)
+        def stub = Stub(DummyContainer)
 
     then:
-    stub.string == ""
-    stub.long == 0
-    stub.bigDecimal == 0
-    stub.list == []
+        stub.string == ""
+        stub.long == 0
+        stub.bigDecimal == 0
+        stub.list == []
 
-    stub.vendingMachine
-    stub.vendingMachine.cassette != null
-    stub.vendingMachine.magazine != null
+        stub.vendingMachine
+        stub.vendingMachine.cassette != null
+        stub.vendingMachine.magazine != null
 
-    stub.dummyContainer.dummyContainer.dummyContainer.list == []
+        stub.dummyContainer.dummyContainer.dummyContainer.list == []
 }</code></pre>
                     </section>
+                    <section>
+<pre><code>class DummyContainer {
+
+    String getString() {}
+
+    Long getLong() {}
+
+    BigDecimal getBigDecimal() {}
+
+    List getList() {}
+
+    VendingMachine getVendingMachine() {}
+
+    DummyContainer getDummyContainer() {}
+}
+</code></pre>
+                        </section>
+                </section>
                 
                 <section>
                     <img src="img/spock_approves.jpg">
                 </section>
 
+<!--###########################################################################################-->
+
+                <section>
+                    <img src="img/groovy-logo-medium.png">
+                    <h1>Goodnes</h1>
+                </section>
+
+                <section>
+                    <h3>Example number 1</h3>
+<pre><code>class DummyUser {
+    int id
+    String name
+    int age
+
+    String getName() {
+        "Mr/Ms $name"
+    }
+}
+
+def "should correctly build DummyUser"() {
+
+    when:
+        def product = new DummyUser(name: "Kazik", age: 18, id: 1)
+
+    then:
+        product.id == 1
+        product.name == "Mr/Ms Kazik"
+        product.age == 18
+}</code></pre>
+                </section>
+
+            <section>
+            <h4>Java baroque</h4>
+<pre class="grayCode"><span class="highCode">public</span> class DummyUser {
+    <span class="highCode">private</span> int id<span class="highCode">;</span>
+    <span class="highCode">private</span> String name<span class="highCode">;</span>
+    <span class="highCode">private</span> int age<span class="highCode">;</span>
+
+    <span class="highCode">public</span> String getName() {
+        <span class="highCode">return</span> "Mr/Ms $name"<span class="highCode">;</span>
+    }
+}</pre>
+            </section>
+
+                       <section>
+                           <h4>Explicite shows bussiness logic</h4>
+<pre class="grayCode">class DummyUser {
+    int id
+    String name
+    int age
+
+    <span class="highCode">String getName() {
+         "Mr/Ms $name"
+    }</span>
+}</pre>  </section>
+                           <section>
+                           <h4>Rich GString api</h4>
+<pre class="grayCode">class DummyUser {
+    int id
+    String name
+    int age
+
+    String getName() {
+         "Mr/Ms <span class="highCode">$name</span>"
+    }
+}</pre>
+                       </section>
+
+                       <section>
+                           <h4>Duck typing</h4>
+<pre class="grayCode">def "should correctly build DummyUser"() {
+
+    when:
+        <span class="highCode">def</span> product = new DummyUser(name: "Kazik", age: 18, id: 1)
+
+    then:
+        product.id == 1
+        product.name == "Mr/Ms Kazik"
+        product.age == 18</pre>
+                       </section>
+
+                       <section>
+                           <h4>Al'a Map constructor</h4>
+<pre class="grayCode">def "should correctly build DummyUser"() {
+
+    when:
+        def product = <span class="highCode">new DummyUser(name: "Kazik", age: 18, id: 1)</span>
+
+    then:
+        product.id == 1
+        product.name == "Mr/Ms Kazik"
+        product.age == 18</pre>
+                       </section>
+
+                       <section>
+                           <h4>Al'a property access</h4>
+<pre class="grayCode">def "should correctly build DummyUser"() {
+
+    when:
+        def product = new DummyUser(name: "Kazik", age: 18, id: 1)</span>
+
+    then:
+        product<span class="highCode">.id</span> == 1
+        product<span class="highCode">.name</span> == "Mr/Ms Kazik"
+        product<span class="highCode">.age</span> == 18</pre>
+                       </section>
+                       <section>
+                           <h4>Al'a property access</h4>
+<pre class="grayCode">def "should correctly build DummyUser"() {
+
+    when:
+        def product = new DummyUser(name: "Kazik", age: 18, id: 1)</span>
+
+    then:
+        product<span class="highCode">.id</span> == 1
+        product<span class="highCode">.name</span> == "Mr/Ms Kazik"
+        product<span class="highCode">.age</span> == 18</pre>
+                       </section>
+
+                        <section>
+                        <h4>Example number 2</h4>
+<pre><code>def "should show groovy goodnes"() {
+
+    given:
+        def jsonBuilder = new JsonBuilder()
+        jsonBuilder {
+            integerList 1, 2, 3, 4, 5
+            stringsMap  {
+                id1  "Spock"
+                id2  "TestNG"
+                id3  "JUnit"
+            }
+        }
+
+    when:
+        def json = new JsonSlurper().parseText jsonBuilder.toString()
+
+    then:
+        json.integerList == [1, 2, 3, 4, 5]
+        json.stringsMap == [id1: "Spock", id2: "TestNG", id3: "JUnit"]
+}</code></pre>
+                        </section>
+
+                       <section>
+                           <h4>Great JSON support</h4>
+<pre class="grayCode">def "should show groovy goodnes"() {
+
+    given:
+        <span class="highCode">def jsonBuilder = new JsonBuilder()
+        jsonBuilder {
+            integerList 1, 2, 3, 4, 5
+            stringsMap  {
+                id1  "Spock"
+                id2  "TestNG"
+                id3  "JUnit"
+            }
+        }</span>
+
+    when:
+        <span class="highCode">def json = new JsonSlurper().parseText jsonBuilder.toString()</span>
+
+    then:
+        <span class="highCode">json.integerList</span> == [1, 2, 3, 4, 5]
+        <span class="highCode">json.stringsMap</span> == [id1: "Spock", id2: "TestNG", id3: "JUnit"]
+}</pre>
+                        </section>
+                         <section>
+                    <h4>Collections constructors</h4>
+<pre class="grayCode">def "should show groovy goodnes"() {
+
+    given:
+        def jsonBuilder = new JsonBuilder()
+        jsonBuilder {
+            integerList 1, 2, 3, 4, 5
+            stringsMap  {
+                id1  "Spock"
+                id2  "TestNG"
+                id3  "JUnit"
+            }
+        }
+
+    when:
+        def json = new JsonSlurper().parseText jsonBuilder.toString()
+
+    then:
+        json.integerList == <span class="highCode">[1, 2, 3, 4, 5]</span>
+        json.stringsMap== <span class="highCode">[id1: "Spock", id2: "TestNG", id3: "JUnit"]</span>
+}</pre>
+                </section>
+                <section>
+                    <h4>Cloujure</h4>
+<pre class="grayCode">def "should show groovy goodnes"() {
+
+    given:
+        def jsonBuilder = new JsonBuilder()
+        <span class="highCode">jsonBuilder {
+            integerList 1, 2, 3, 4, 5
+            stringsMap  {
+                id1  "Spock"
+                id2  "TestNG"
+                id3  "JUnit"
+            }
+        }</span>
+
+    when:
+        def json = new JsonSlurper().parseText jsonBuilder.toString()
+
+    then:
+        json.integerList == [1, 2, 3, 4, 5]
+        json.stringsMap== [id1: "Spock", id2: "TestNG", id3: "JUnit"]
+}</pre>
+                </section>
+                <section>
+                    <h4>It's possible to omit parentheses</h4>
+<pre class="grayCode">def "should show groovy goodnes"() {
+
+    given:
+        def jsonBuilder = new JsonBuilder()
+        jsonBuilder {
+            integerList 1, 2, 3, 4, 5
+            stringsMap  {
+                id1  "Spock"
+                id2  "TestNG"
+                id3  "JUnit"
+            }
+        }
+
+    when:
+        def json = new JsonSlurper().parseText<span class="highCode">(</span>jsonBuilder.toString()<span class="highCode">)</span>
+
+    then:
+        json.integerList == [1, 2, 3, 4, 5]
+        json.stringsMap== [id1: "Spock", id2: "TestNG", id3: "JUnit"]
+}</pre>
+                </section>
                 <section>
                     <h2>Dziękujemy za uwagę!</h2>
 
