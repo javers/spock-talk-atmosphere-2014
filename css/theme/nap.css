@@ -24,6 +24,10 @@
     border-right: 0px;
 }
 
+.reveal pre code {
+    max-height: 600px;
+}
+
 .reveal code {
     color: black;
 }
