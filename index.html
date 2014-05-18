@@ -171,8 +171,7 @@
                     </table>
                 </section>
 
-            <!-- Bartek -->
-            <section>
+                <!-- Bartek -->
                 <section fullscreen-img="img/Human_evolution_scheme_1.png" fullscreen-size="contain">
                     <div style="position: absolute"><small>
                         http://commons.wikimedia.org/wiki/File:Human_evolution_scheme.svg
@@ -192,7 +191,6 @@
 
                 <section fullscreen-img="img/Human_evolution_scheme_5.png" fullscreen-size="contain">
                 </section>
-            </section>
 
 
                 <!-- Paweł -->
@@ -207,19 +205,7 @@
                     </ul>
                 </section>
 
-                <section>
-                    <h3>Groovy</h3>
-                    <ul class="unstyled">
-                        <li class="highCode">is it OK to write large apps in Groovy?</li>
-                    </ul>
-                    <ul>
-                        <li >definitely, it's perfect for writing tests</li>
-                        <li >modern, dynamic, duck typing</li>
-                        <li >less code, do more</li>
-                        <li >no <code>Java</code> Baroque</li>
-                    </ul>
-                </section>
-
+                <!-- Bartek -->
                 <section>
                     <h2>Enough! Show me the code</h2>
                 </section>
@@ -243,9 +229,8 @@
             baseList);
     }
 }</code></pre>
-                </section>
+</section>
 
-<section>
      <!-- Paweł -->
      <section>
                     <h3>Spock BDD Test</h3>
@@ -364,47 +349,408 @@
 }</pre>
     </section>
 
-</section>
-
-<!--##################Assertions in then/expect section##############################-->
                 <section>
+                    <h2>Assertions</h2>
+                </section>
+
+
                 <section>
-                    <h3>Assertions in then/expect</h3>
-<pre><code>def "should evaluate assertions with Groovy Truth"() {
-    expect:
-        //boolean expresions
-        assert true
-        !false
+                    <h3>Power Assert</h3>
+                    <pre class="grayCode">
+    then:
+    <span class="highCode">vendingMachine.display == "CREDIT 0.30"</span>
 
-        // Collection & maps
-        [1]          //non-empty collection -> true
-        ['one': 1]   //non-empty map        -> true
-        ![]          //empty collection     -> false
-        ![:]         //empty map            -> false
+    ....
 
-        // Number
-        1            //non-zero             -> true
-        !0           //zero                 -> false
+    Condition not satisfied:
+    vendingMachine.display == "CREDIT 0.30"
+    |              |       |
+    |              |       false
+    |              |       1 difference (90% similarity)
+    |              |       CREDIT 0.(1)0
+    |              |       CREDIT 0.(3)0
+    |              CREDIT 0.10
+    vendingmachine.domain.VendingMachine@2bbf180e
+</pre>
+                </section>
 
-        // Strings
-        'a'          //non-empty            -> true
-        ' '          //non-empty            -> true
-        !''          //empty                -> false
+                <section>
+                    <h3>Pretty failure messages</h3>
+                    <pre class="grayCode">
+    then:
+    vendingMachine.display == "CREDIT 0.30"
 
-        // Object references
-        this         //not null             -> true
-        !null        //null                 -> false
+    ....
+
+    Condition not satisfied:
+    <span class="highCode">vendingMachine.display == "CREDIT 0.30"
+    |              |       |
+    |              |       false
+    |              |       1 difference (90% similarity)
+    |              |       CREDIT 0.(1)0
+    |              |       CREDIT 0.(3)0
+    |              CREDIT 0.10
+    vendingmachine.domain.VendingMachine@2bbf180e</span>
+</pre>
+                </section>
+
+
+                <section fullscreen-img="img/reporting_of_failures.png" fullscreen-size="contain">
+                </section>
+
+                <!--################  DATA DRIVEN  ############################################################-->
+               <!-- Bartek -->
+               <section>
+                    <h2>Data Driven Tests</h2>
+                </section>
+
+                <!-- Paweł -->
+                <section>
+                    <h3>Data driven</h3>
+<pre><code>@Unroll
+def """should round #givenValue.class.simpleName #givenValue
+       to #expectedValue with scale #scale"""() {
+
+    when:
+        def result = Money.round(givenValue, scale)
+
+    then:
+        result == expectedValue
+
+    where:
+        givenValue                       | scale || expectedValue
+        0.339d                           | 2     || 0.34
+        0.22d                            | 2     || 0.22
+        0.1d                             | 1     || 0.1
+        new BigDecimal(2.333, DECIMAL32) | 2     || 2.33
 }</code></pre>
                 </section>
 
+                    <!-- Bartek -->
+                    <section>
+                        <h3>Data Tables</h3>
+<pre class="grayCode">@Unroll
+def """should round #givenValue.class.simpleName #givenValue
+       to #expectedValue with scale #scale"""() {
+
+    when:
+        def result = Money.round(givenValue, scale)
+
+    then:
+        result == expectedValue
+
+    where:
+        <span class="highCode">givenValue                       | scale || expectedValue
+        0.339d                           | 2     || 0.34
+        0.22d                            | 2     || 0.22
+        0.1d                             | 1     || 0.1
+        new BigDecimal(2.333, DECIMAL32) | 2     || 2.33</span>
+}</pre>
+                    </section>
+
+                    <!-- Paweł -->
+                    <section>
+                        <h3>Data Tables</h3>
+<pre class="grayCode">@Unroll
+def """should round #givenValue.class.simpleName #givenValue
+       to #expectedValue with scale #scale"""() {
+
+    when:
+        def result = Money.round(<span class="highCode">givenValue</span>, <span class="highCode">scale</span>)
+
+    then:
+        result == <span class="highCode">expectedValue</span>
+
+    where:
+        <span class="highCode">givenValue</span>                       | <span class="highCode">scale</span> || <span class="highCode">expectedValue</span>
+        0.339d                           | 2     || 0.34
+        0.22d                            | 2     || 0.22
+        0.1d                             | 1     || 0.1
+        new BigDecimal(2.333, DECIMAL32) | 2     || 2.33</span>
+}</pre>
+                    </section>
+
+                    <!--Bartek -->
+                    <section>
+                        <h3>Data Tables</h3>
+<pre class="grayCode"><span class="highCode">@Unroll</span>
+def """should round <span class="highCode">#givenValue.class.simpleName #givenValue</span>
+       to <span class="highCode">#expectedValue</span> with scale <span class="highCode">#scale</span>"""()</span> {
+
+    when:
+        def result = Money.round(givenValue, scale)
+
+    then:
+        result == expectedValue
+
+    where:
+        <span class="highCode">givenValue</span>                       | <span class="highCode">scale</span> || <span class="highCode">expectedValue</span>
+        0.339d                           | 2     || 0.34
+        0.22d                            | 2     || 0.22
+        0.1d                             | 1     || 0.1
+        new BigDecimal(2.333, DECIMAL32) | 2     || 2.33
+}</pre>
+                    </section>
+
+<!--#############################################################################################-->
+
+                <section fullscreen-img="img/data_driven.png" fullscreen-size="contain">
+                </section>
+
+<!--####################### VERIFY EXCEPTIONS ################################################-->
+
+                <!-- Bartek -->
+                <section>
+                    <h2>Verify Exceptions</h2>
+                </section>
+
+                <!-- Paweł -->
+                <section>
+                    <h3>Verify exceptions</h3>
+<pre><code>def "should throw exception when try to insert null"() {
+
+    given:
+        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+                                                Stub(CoinCassette))
+
+    when:
+        vendingMachine.insert null
+
+    then:
+        def exception = thrown IllegalArgumentException
+        exception.message == "coin can't be null"
+}</code></pre>
+                </section>
+
+                <!-- Bartek -->
+                <section>
+                    <h4>Specification.thrown(...)</h4>
+<pre class="grayCode">def "should throw exception when try to insert null"() {
+
+    given:
+        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+        Stub(CoinCassette))
+
+    when:
+        vendingMachine.insert null
+
+    then:
+        def exception = <span class="highCode">thrown IllegalArgumentException</span>
+        exception.message == "coin can't be null"
+}</pre>
+                </section>
+
+                    <!-- Paweł -->
+                    <section>
+                        <h4>it's easy to look into thrown exception</h4>
+<pre class="grayCode">def "should throw exception when try to insert null"() {
+
+    given:
+        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+        Stub(CoinCassette))
+
+    when:
+        vendingMachine.insert null
+
+    then:
+        <span class="highCode">def exception = thrown IllegalArgumentException
+        exception.message == "coin can't be null"</span>
+}</pre>
+                    </section>
+
+<!--###########################################################################################-->
+
+<!--################ MOCK ###############################################################-->
+                <!-- Bartek -->
+                <section>
+                    <h2>Mocking & Stubbing</h2>
+                </section>
+
+                <!-- Paweł -->
+                <section>
+                    <h3>Mock</h3>
+<pre><code>def "should check that money fall into coin cassette"() {
+
+    given:
+        def coinCassetteMock = Mock(CoinCassette)
+        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+                                                coinCassetteMock)
+
+    when:
+        vendingMachine.insert QUARTER
+
+    then:
+        1 * coinCassetteMock.push(QUARTER)
+}</code></pre>
+                </section>
+
+                    <!-- Bartek -->
+                    <section>
+                    <h3>Mock</h3>
+<pre class="grayCode">def "should check that money fall into coin cassette"() {
+
+    given:
+        def coinCassetteMock = Mock(CoinCassette)
+        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+                                                coinCassetteMock)
+
+    when:
+        vendingMachine.insert QUARTER
+
+    then:
+        <span class="highCode">1 * coinCassetteMock.push(QUARTER)</span>
+}</pre>
+                </section>
+
+                <!-- Paweł -->
+                <section>
+                        <h3>Mock</h3>
+<pre class="grayCode">def "should check that money fall into coin cassette"() {
+
+    given:
+        def coinCassetteMock = Mock(CoinCassette)
+        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+                                                coinCassetteMock)
+
+    when:
+        vendingMachine.insert QUARTER
+
+    then:
+        <span class="highCode">1 * coinCassetteMock.push(_ as Coin)</span>
+}</pre>
+                </section>
+
+
+<!--#################### STUB ##############################################################-->
+
+                <!-- Bartek -->
+                <section>
+                    <h3>Stub</h3>
+<pre><code>def "should return coin when coin cassette is full"() {
+
+    given:
+        def coinCassetteMock = Stub(CoinCassette) {
+            isFull(_ as Coin) >> true
+        }
+
+        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+                                                coinCassetteMock)
+
+    when:
+        def returnedCoin = vendingMachine.insert QUARTER
+
+    then:
+        returnedCoin.get() == QUARTER
+}</code></pre>
+                </section>
+
+                <!-- Paweł -->
+                <section>
+                    <h3>Stub</h3>
+<pre class="grayCode">def "should return coin when coin cassette is full"() {
+
+    given:
+        <span class="highCode">def coinCassetteMock = Stub(CoinCassette) {
+            isFull(_ as Coin) >> true
+        }</span>
+
+        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
+                                                coinCassetteMock)
+
+    when:
+        def returnedCoin = vendingMachine.insert QUARTER
+
+    then:
+        returnedCoin.get() == QUARTER
+}
+</pre>
+                </section>
+
+
+                <!-- Bartek -->
+                <section>
+                    <h3>Imagine that you have to stub this...</h3>
+<pre><code>
+    class DummyContainer {
+
+        String getString() {}
+
+        Long getLong() {}
+
+        BigDecimal getBigDecimal() {}
+
+        List getList() {}
+
+        VendingMachine getVendingMachine() {}
+
+        DummyContainer getDummyContainer() {}
+    }
+
+</code></pre>
+                </section>
+
+                <section>
+                    <img src="img/spock-facepalm.png">
+                </section>
+
+
+                <!-- Paweł -->
+                <section>
+                        <h3>Stub default value</h3>
+
+<pre><code>def "should return default value for all not primitive types"() {
+
+    when:
+        def stub = Stub(DummyContainer)
+
+    then:
+        stub.string == ""
+        stub.long == 0
+        stub.bigDecimal == 0
+        stub.list == []
+
+        stub.vendingMachine
+        stub.vendingMachine.cassette != null
+        stub.vendingMachine.magazine != null
+
+        stub.dummyContainer.dummyContainer.dummyContainer.list == []
+}</code></pre>
+                    </section>
+
+
+                    <section>
+<pre><code>class DummyContainer {
+
+    String getString() {}
+
+    Long getLong() {}
+
+    BigDecimal getBigDecimal() {}
+
+    List getList() {}
+
+    VendingMachine getVendingMachine() {}
+
+    DummyContainer getDummyContainer() {}
+}
+</code></pre>
+                    </section>
+
+                <section>
+                    <img src="img/spock_approves.jpg">
+                </section>
+
+                <!--##################Assertions in then/expect section##############################-->
+                <section>
+
+                    <!-- Paweł -->
                     <section>
                         <h3>Assertions in then/expect section</h3>
 <pre class="grayCode">def "should evaluate assertions with Groovy Truth"() {
 
     expect:
         <span class="highCode">//boolean expresions
-        assert true
-        !false                </span>
+        list.isEmpty()</span>
 
         // Collection & maps
         [1]          //non-empty collection -> true
@@ -418,14 +764,14 @@
     </pre>
                     </section>
 
+                    <!-- Bartek -->
                     <section>
                         <h3>Assertions in then/expect section</h3>
 <pre class="grayCode">def "should evaluate assertions with Groovy Truth"() {
 
     expect:
         //boolean expresions
-        assert true
-        !false
+        list.isEmpty()
 
         <span class="highCode">// Collection & maps
         [1]          //non-empty collection -> true
@@ -458,7 +804,6 @@
         ' '          //non-empty            -> true
         !''          //empty                -> false
 
-
 </pre>
                     </section>
 
@@ -479,7 +824,6 @@
         this         //not null             -> true
         !null        //null                 -> false
 }
-
 
 
 </pre>
@@ -504,358 +848,11 @@
 
 
 
-
 </pre>
                     </section>
 
                 </section>
-<!--######################################################################-->
-
-                <section>
-                <section>
-                    <h3>Reporting failures</h3>
-                    <img src="img/reporting_of_failures.png" />
-                </section>
-
-                <section fullscreen-img="img/reporting_of_failures.png" fullscreen-size="contain">
-                </section>
-                </section>
-
-
-<!--################  DATA DRIVEN  ############################################################-->
-                <section>
-
-
-                <section>
-                    <h3>Data driven</h3>
-<pre><code>@Unroll
-def """should round #givenValue.class.simpleName #givenValue
-       to #expectedValue with scale #scale"""() {
-
-    when:
-        def result = Money.round(givenValue, scale)
-
-    then:
-        result == expectedValue
-
-    where:
-        givenValue                       | scale || expectedValue
-        0.339d                           | 2     || 0.34
-        0.22d                            | 2     || 0.22
-        0.1d                             | 1     || 0.1
-        new BigDecimal(2.333, DECIMAL32) | 2     || 2.33
-}</code></pre>
-                </section>
-
-                    <section>
-                        <h3>Data Tables</h3>
-<pre class="grayCode">@Unroll
-def """should round #givenValue.class.simpleName #givenValue
-       to #expectedValue with scale #scale"""() {
-
-    when:
-        def result = Money.round(givenValue, scale)
-
-    then:
-        result == expectedValue
-
-    where:
-        <span class="highCode">givenValue                       | scale || expectedValue
-        0.339d                           | 2     || 0.34
-        0.22d                            | 2     || 0.22
-        0.1d                             | 1     || 0.1
-        new BigDecimal(2.333, DECIMAL32) | 2     || 2.33</span>
-}</pre>
-                    </section>
-
-                    <section>
-                        <h3>Data Tables</h3>
-<pre class="grayCode">@Unroll
-def """should round #givenValue.class.simpleName #givenValue
-       to #expectedValue with scale #scale"""() {
-
-    when:
-        def result = Money.round(<span class="highCode">givenValue</span>, <span class="highCode">scale</span>)
-
-    then:
-        result == <span class="highCode">expectedValue</span>
-
-    where:
-        <span class="highCode">givenValue</span>                       | <span class="highCode">scale</span> || <span class="highCode">expectedValue</span>
-        0.339d                           | 2     || 0.34
-        0.22d                            | 2     || 0.22
-        0.1d                             | 1     || 0.1
-        new BigDecimal(2.333, DECIMAL32) | 2     || 2.33</span>
-}</pre>
-                    </section>
-
-                    <section>
-                        <h3>Data Tables</h3>
-<pre class="grayCode"><span class="highCode">@Unroll</span>
-def """should round <span class="highCode">#givenValue.class.simpleName #givenValue</span>
-       to <span class="highCode">#expectedValue</span> with scale <span class="highCode">#scale</span>"""()</span> {
-
-    when:
-        def result = Money.round(givenValue, scale)
-
-    then:
-        result == expectedValue
-
-    where:
-        <span class="highCode">givenValue</span>                       | <span class="highCode">scale</span> || <span class="highCode">expectedValue</span>
-        0.339d                           | 2     || 0.34
-        0.22d                            | 2     || 0.22
-        0.1d                             | 1     || 0.1
-        new BigDecimal(2.333, DECIMAL32) | 2     || 2.33
-}</pre>
-                    </section>
-
-                </section>
-<!--#############################################################################################-->
-
-                <section>
-                <section>
-
-                    <h3>@Unroll</h3>
-                    <img src="img/data_driven.png">
-                    
-                </section>
-                <section fullscreen-img="img/data_driven.png" fullscreen-size="contain">
-                </section>
-                </section>
-
-<!--####################### VERIFY EXCEPTIONS ################################################-->
-                <section>
-
-                <section>
-                    <h3>Verify exceptions</h3>
-<pre><code>def "should throw exception when try to insert null"() {
-
-    given:
-        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
-                                                Stub(CoinCassette))
-
-    when:
-        vendingMachine.insert null
-
-    then:
-        def exception = thrown IllegalArgumentException
-        exception.message == "coin can't be null"
-}</code></pre>
-                </section>
-
-                <section>
-                    <h4>methods thrown() and thrown(Class type) in Specification</h4>
-<pre class="grayCode">def "should throw exception when try to insert null"() {
-
-    given:
-        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
-        Stub(CoinCassette))
-
-    when:
-        vendingMachine.insert null
-
-    then:
-        def exception = <span class="highCode">thrown IllegalArgumentException</span>
-        exception.message == "coin can't be null"
-}</pre>
-                </section>
-
-                    <section>
-                        <h4>it's easy to look into thrown exception</h4>
-<pre class="grayCode">def "should throw exception when try to insert null"() {
-
-    given:
-        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
-        Stub(CoinCassette))
-
-    when:
-        vendingMachine.insert null
-
-    then:
-        <span class="highCode">def exception = thrown IllegalArgumentException
-        exception.message == "coin can't be null"</span>
-}</pre>
-                    </section>
-
-                </section>
-<!--###########################################################################################-->
-
-<!--################ MOCK ###############################################################-->
-                <section>
-
-                <section>
-                    <h3>Mock</h3>
-<pre><code>def "should check that money fall into coin cassette"() {
-
-    given:
-        def coinCassetteMock = Mock(CoinCassette)
-        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
-                                                coinCassetteMock)
-
-    when:
-        vendingMachine.insert QUARTER
-
-    then:
-        1 * coinCassetteMock.push(QUARTER)
-}</code></pre>
-                </section>
-
-                    <section>
-                    <h3>Mock</h3>
-<pre class="grayCode">def "should check that money fall into coin cassette"() {
-
-    given:
-        def coinCassetteMock = Mock(CoinCassette)
-        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
-                                                coinCassetteMock)
-
-    when:
-        vendingMachine.insert QUARTER
-
-    then:
-        <span class="highCode">1 * coinCassetteMock.push(QUARTER)</span>
-}</pre>
-                </section>
-
-                <section>
-                        <h3>Mock</h3>
-<pre class="grayCode">def "should check that money fall into coin cassette"() {
-
-    given:
-        def coinCassetteMock = Mock(CoinCassette)
-        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
-                                                coinCassetteMock)
-
-    when:
-        vendingMachine.insert QUARTER
-
-    then:
-        <span class="highCode">1 * coinCassetteMock.push(_ as Coin)</span>
-}</pre>
-                </section>
-
-                </section>
-
-<!--###########################################################################################-->
-
-<!--#################### STUB ##############################################################-->
-
-                <section>
-
-                <section>
-                    <h3>Stub</h3>
-<pre><code>def "should return coin when coin cassette is full"() {
-
-    given:
-        def coinCassetteMock = Stub(CoinCassette) {
-            isFull(_ as Coin) >> true
-        }
-
-        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
-                                                coinCassetteMock)
-
-    when:
-        def returnedCoin = vendingMachine.insert QUARTER
-
-    then:
-        returnedCoin.get() == QUARTER
-}</code></pre>
-                </section>
-
-                <section>
-                    <h3>Stub</h3>
-<pre class="grayCode">def "should return coin when coin cassette is full"() {
-
-    given:
-        <span class="highCode">def coinCassetteMock = Stub(CoinCassette) {
-            isFull(_ as Coin) >> true
-        }</span>
-
-        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
-                                                coinCassetteMock)
-
-    when:
-        def returnedCoin = vendingMachine.insert QUARTER
-
-    then:
-        returnedCoin.get() == QUARTER
-}
-</pre>
-                </section>
-
-
-                </section>
-
-                <section>
-                    <h3>Imagine that you have to stub this...</h3>
-<pre><code>
-    class DummyContainer {
-
-        String getString() {}
-
-        Long getLong() {}
-
-        BigDecimal getBigDecimal() {}
-
-        List getList() {}
-
-        VendingMachine getVendingMachine() {}
-
-        DummyContainer getDummyContainer() {}
-    }
-
-</code></pre>
-                </section>
-                
-                <section>
-                    <img src="img/spock-facepalm.png">
-                </section>
-
-                <section>
-                    <section>
-                        <h3>Stub default value</h3>
-
-<pre><code>def "should return default value for all not primitive types"() {
-
-    when:
-        def stub = Stub(DummyContainer)
-
-    then:
-        stub.string == ""
-        stub.long == 0
-        stub.bigDecimal == 0
-        stub.list == []
-
-        stub.vendingMachine
-        stub.vendingMachine.cassette != null
-        stub.vendingMachine.magazine != null
-
-        stub.dummyContainer.dummyContainer.dummyContainer.list == []
-}</code></pre>
-                    </section>
-                    <section>
-<pre><code>class DummyContainer {
-
-    String getString() {}
-
-    Long getLong() {}
-
-    BigDecimal getBigDecimal() {}
-
-    List getList() {}
-
-    VendingMachine getVendingMachine() {}
-
-    DummyContainer getDummyContainer() {}
-}
-</code></pre>
-                        </section>
-                </section>
-                
-                <section>
-                    <img src="img/spock_approves.jpg">
-                </section>
+                <!--######################################################################-->
 
 <!--###########################################################################################-->
 
@@ -1092,6 +1089,22 @@ def "should correctly build DummyUser"() {
         json.stringsMap== [id1: "Spock", id2: "TestNG", id3: "JUnit"]
 }</pre>
                 </section>
+
+
+                <section>
+                    <h3>Groovy</h3>
+                    <ul class="unstyled">
+                        <li class="highCode">is it OK to write large apps in Groovy?</li>
+                    </ul>
+                    <ul>
+                        <li >definitely, it's perfect for writing tests</li>
+                        <li >modern, dynamic, duck typing</li>
+                        <li >less code, do more</li>
+                        <li >no <code>Java</code> Baroque</li>
+                    </ul>
+                </section>
+
+
                 <section>
                     <h2>Dziękujemy za uwagę!</h2>
 
