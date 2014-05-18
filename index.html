@@ -623,28 +623,8 @@ def """should round <span class="highCode">#givenValue.class.simpleName #givenVa
 
 <!--#################### STUB ##############################################################-->
 
+
                 <!-- Bartek -->
-                <section>
-                    <h3>Stub</h3>
-<pre><code>def "should return coin when coin cassette is full"() {
-
-    given:
-        def coinCassetteMock = Stub(CoinCassette) {
-            isFull(_ as Coin) >> true
-        }
-
-        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
-                                                coinCassetteMock)
-
-    when:
-        def returnedCoin = vendingMachine.insert QUARTER
-
-    then:
-        returnedCoin.get() == QUARTER
-}</code></pre>
-                </section>
-
-                <!-- Paweł -->
                 <section>
                     <h3>Stub</h3>
 <pre class="grayCode">def "should return coin when coin cassette is full"() {
@@ -709,158 +689,23 @@ def """should round <span class="highCode">#givenValue.class.simpleName #givenVa
         stub.bigDecimal == 0
         stub.list == []
 
+        //stubs creates stubs
         stub.vendingMachine
-        stub.vendingMachine.cassette != null
-        stub.vendingMachine.magazine != null
-
-        stub.dummyContainer.dummyContainer.dummyContainer.list == []
+        stub.vendingMachine.credit == 0
 }</code></pre>
                     </section>
-
-
-                    <section>
-<pre><code>class DummyContainer {
-
-    String getString() {}
-
-    Long getLong() {}
-
-    BigDecimal getBigDecimal() {}
-
-    List getList() {}
-
-    VendingMachine getVendingMachine() {}
-
-    DummyContainer getDummyContainer() {}
-}
-</code></pre>
-                    </section>
-
                 <section>
                     <img src="img/spock_approves.jpg">
                 </section>
 
-                <!--##################Assertions in then/expect section##############################-->
-                <section>
 
-                    <!-- Paweł -->
-                    <section>
-                        <h3>Assertions in then/expect section</h3>
-<pre class="grayCode">def "should evaluate assertions with Groovy Truth"() {
-
-    expect:
-        <span class="highCode">//boolean expresions
-        list.isEmpty()</span>
-
-        // Collection & maps
-        [1]          //non-empty collection -> true
-        ['one': 1]   //non-empty map        -> true
-        ![]          //empty collection     -> false
-        ![:]         //empty map            -> false
-
-        // Number
-        1            //non-zero             -> true
-        !0           //zero                 -> false
-    </pre>
-                    </section>
-
-                    <!-- Bartek -->
-                    <section>
-                        <h3>Assertions in then/expect section</h3>
-<pre class="grayCode">def "should evaluate assertions with Groovy Truth"() {
-
-    expect:
-        //boolean expresions
-        list.isEmpty()
-
-        <span class="highCode">// Collection & maps
-        [1]          //non-empty collection -> true
-        ['one': 1]   //non-empty map        -> true
-        ![]          //empty collection     -> false
-        ![:]         //empty map            -> false
-        </span>
-        // Number
-        1            //non-zero             -> true
-        !0           //zero                 -> false
-    </pre>
-                    </section>
-
-                    <section>
-                        <h3>Assertions in then/expect section</h3>
-<pre class="grayCode">
-
-        // Collection & maps
-        [1]          //non-empty collection -> true
-        ['one': 1]   //non-empty map        -> true
-        ![]          //empty collection     -> false
-        ![:]         //empty map            -> false
-
-        <span class="highCode">// Number
-        1            //non-zero             -> true
-        !0           //zero                 -> false
-            </span>
-        // Strings
-        'a'          //non-empty            -> true
-        ' '          //non-empty            -> true
-        !''          //empty                -> false
-
-</pre>
-                    </section>
-
-                    <section>
-                        <h3>Assertions in then/expect section</h3>
-<pre class="grayCode">
-
-        // Number
-        1            //non-zero             -> true
-        !0           //zero                 -> false
-
-        <span class="highCode">// Strings
-        'a'          //non-empty            -> true
-        ' '          //non-empty            -> true
-        !''          //empty                -> false</span>
-
-        // Object references
-        this         //not null             -> true
-        !null        //null                 -> false
-}
-
-
-</pre>
-                    </section>
-
-                    <section>
-                        <h3>Assertions in then/expect section</h3>
-<pre class="grayCode">
-
-        // Strings
-        'a'          //non-empty            -> true
-        ' '          //non-empty            -> true
-        !''          //empty                -> false
-
-        <span class="highCode">// Object references
-        this         //not null             -> true
-        !null        //null                 -> false</span>
-}
-
-
-
-
-
-
-</pre>
-                    </section>
-
-                </section>
-                <!--######################################################################-->
-
-<!--###########################################################################################-->
-
+<!--Groovy Goodness #################################################################################################-->
+<section>
                 <section>
                     <img src="img/groovy-logo-medium.png">
                     <h1>Goodnes</h1>
                 </section>
-
+                <!--
                 <section>
                     <h3>Example number 1</h3>
 <pre><code>class DummyUser {
@@ -884,9 +729,9 @@ def "should correctly build DummyUser"() {
         product.age == 18
 }</code></pre>
                 </section>
-
+                -->
             <section>
-            <h4>Java baroque</h4>
+            <h4>No Java baroque</h4>
 <pre class="grayCode"><span class="highCode">public</span> class DummyUser {
     <span class="highCode">private</span> int id<span class="highCode">;</span>
     <span class="highCode">private</span> String name<span class="highCode">;</span>
@@ -899,7 +744,7 @@ def "should correctly build DummyUser"() {
             </section>
 
                        <section>
-                           <h4>Explicite shows bussiness logic</h4>
+                           <h4>Explicitly shows business logic</h4>
 <pre class="grayCode">class DummyUser {
     int id
     String name
@@ -1089,7 +934,7 @@ def "should correctly build DummyUser"() {
         json.stringsMap== [id1: "Spock", id2: "TestNG", id3: "JUnit"]
 }</pre>
                 </section>
-
+</section>
 
                 <section>
                     <h3>Groovy</h3>
