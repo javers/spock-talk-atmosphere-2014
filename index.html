@@ -119,31 +119,36 @@
 
                 <!-- Bartek -->
                 <section>
-                    <h3>Specification by example</h3>
+                    <h3>Specification by example
+                        <br/> Fit
+                    </h3>
 
-                    A typical FIT test table
+                    <img src="img/fit_example.png" />
+                    src: <i>Bridging the Communication Gap</i> - Gojko Adzic
+
+
                 </section>
 
                 <!-- Bartek -->
                 <section>
-                    <h3>Classical BDD</h3>
+                    <h3>Classical BDD <br/> JBehave</h3>
 
-                    JBehave example:
+
                     <pre style="font-family: monospace;">
-Scenario:  trader is not alerted below threshold
+<span class="hljs-keyword">Scenario:</span>  trader is not alerted below threshold
 
-Given a stock of symbol STK1 and a threshold of 10.0
-When the stock is traded at 5.0
-Then the alert status should be OFF
+<span class="hljs-keyword">Given</span> a stock of symbol STK1 and a threshold of 10.0
+<span class="hljs-keyword">When</span> the stock is traded at 5.0
+<span class="hljs-keyword">Then</span> the alert status should be OFF
                     </pre>
-                Glue code required :(
+                    <small><span style="font-family: monospace;">Glue code required :( </span></small>
+
                 </section>
 
 
                 <!-- Paweł -->
                 <section>
-                    <h3>Specification based BDD</h3>
-                    Spock example:
+                    <h3>Specification based BDD<br/>Spock</h3>
                     <pre><code>def "HashMap accepts null key"() {
 
   given:
@@ -155,6 +160,7 @@ Then the alert status should be OFF
   then:
         notThrown(NullPointerException)
 }</code></pre>
+                <span style="font-family: monospace;">No glue code :) </span>
                 </section>
 
 
@@ -586,9 +592,15 @@ def """should round <span class="highCode">#givenValue.class.simpleName #givenVa
                                 <li>we teach <b>Stubs</b>!</li>
                             </ul>
                         </li>
-
                     </ul>
 
+                </section>
+
+                <section fullscreen-img="img/mocking_1.png" fullscreen-size="contain">
+                </section>
+                <section fullscreen-img="img/mocking_2.png" fullscreen-size="contain">
+                </section>
+                <section fullscreen-img="img/mocking_3.png" fullscreen-size="contain">
                 </section>
 
                 <!-- Paweł -->
@@ -615,7 +627,7 @@ def """should round <span class="highCode">#givenValue.class.simpleName #givenVa
 <pre class="grayCode">def "should check that money fall into coin cassette"() {
 
     given:
-        def coinCassetteMock = Mock(CoinCassette)
+        def <span class="highCode">coinCassetteMock = Mock(CoinCassette)</span>
         def vendingMachine = new VendingMachine(Stub(ProductMagazine),
                                                 coinCassetteMock)
 
@@ -842,30 +854,6 @@ def "should correctly build DummyUser"() {
         product<span class="highCode">.age</span> == 18</pre>
                        </section>
 
-                        <section>
-                        <h4>Example number 2</h4>
-<pre><code>def "should show groovy goodnes"() {
-
-    given:
-        def jsonBuilder = new JsonBuilder()
-        jsonBuilder {
-            integerList 1, 2, 3, 4, 5
-            stringsMap  {
-                id1  "Spock"
-                id2  "TestNG"
-                id3  "JUnit"
-            }
-        }
-
-    when:
-        def json = new JsonSlurper().parseText jsonBuilder.toString()
-
-    then:
-        json.integerList == [1, 2, 3, 4, 5]
-        json.stringsMap == [id1: "Spock", id2: "TestNG", id3: "JUnit"]
-}</code></pre>
-                        </section>
-
                        <section>
                            <h4>Great JSON support</h4>
 <pre class="grayCode">def "should show groovy goodnes"() {
@@ -984,12 +972,12 @@ def "should correctly build DummyUser"() {
 
                     <table id="slimTable">
                         <tr> <td>Paweł Szymczyk  </td> <td><a href="http://javers.org">javers.org</a></td> <td><a>pawel.szymczyk90@gmail.com</a> </td></tr>
-                        <tr> <td>Bartosz Walacik </td> <td><a href="http://javers.org">javers.org</a></td> <td><a>bwalacik@gmail.com</a></td></tr>
+                        <tr> <td>Bartosz Walacik </td> <td><a href="http://javers.org">javers.org</a></td> <td><a>@BartoszWalacik</a></td></tr>
                     </table>
 
                     <br/>
                     <br/>
-                    <a href="https://github.com/javers/spock-talk-atmosphere-2014">http://github.com/javers/spock-talk-atmosphere-2014</a>
+                    <small><a href="https://github.com/javers/spock-talk-atmosphere-2014">http://github.com/javers/spock-talk-atmosphere-2014</a></small>
 
 
                 </section>
