@@ -128,8 +128,15 @@
                 <section>
                     <h3>Classical BDD</h3>
 
-                    A typical BDD - JBehave
+                    JBehave example:
+                    <pre style="font-family: monospace;">
+Scenario:  trader is not alerted below threshold
 
+Given a stock of symbol STK1 and a threshold of 10.0
+When the stock is traded at 5.0
+Then the alert status should be OFF
+                    </pre>
+                Glue code required :(
                 </section>
 
 
@@ -570,7 +577,18 @@ def """should round <span class="highCode">#givenValue.class.simpleName #givenVa
 <!--################ MOCK ###############################################################-->
                 <!-- Bartek -->
                 <section>
-                    <h2>Mocking & Stubbing</h2>
+                    <h2>Mock vs Stub</h2>
+
+                    <ul>
+                        <li><b>Mock</b> - is for verifying interactions</li>
+                        <li><b>Stub</b> - provides canned responses
+                            <ul>
+                                <li>we teach <b>Stubs</b>!</li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
                 </section>
 
                 <!-- Paweł -->
