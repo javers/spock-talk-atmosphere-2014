@@ -92,36 +92,67 @@
                     </ul>
                 </section>
 
+                <!-- Paweł -->
+                <section>
+                    <h2>Beyond TDD</h2>
+                </section>
 
                 <!-- Paweł -->
                 <section>
-                    <table id="slimTable">
-                    <tr>
-                        <th>TDD</th>
-                        <th>vs &nbsp; &nbsp; BDD</th>
-                    </tr>
-                    <tr>
-                        <td>code oriented</td>
-                        <td>&raquo; &nbsp; &nbsp; feature oriented</td>
-                    </tr>
-                    <tr>
-                        <td>free-style</td>
-                        <td>&raquo; &nbsp; &nbsp; formalized</td>
-                    </tr>
-                    <tr>
-                        <td>unreadable to humans</td>
-                        <td>&raquo; &nbsp; &nbsp; readable to humans</td>
-                    </tr>
+                    <h3>TDD disadvantages</h3>
 
-                    </table>
+                        <table id="slimTable">
+                            <tr>
+                                <td>code oriented</td>
 
-                </section>
+                            </tr>
+                            <tr>
+                                <td>free-style</td>
+                            </tr>
+                            <tr>
+                                <td>unreadable to humans</td>
+                            </tr>
 
-                <section>
-                    <h2>Big Picture</h2>
+                        </table>
+
                 </section>
 
                 <!-- Bartek -->
+                <section>
+                    <h3>Specification by example</h3>
+
+                    A typical FIT test table
+                </section>
+
+                <!-- Bartek -->
+                <section>
+                    <h3>Classical BDD</h3>
+
+                    A typical BDD - JBehave
+
+                </section>
+
+
+                <!-- Paweł -->
+                <section>
+                    <h3>Specification based BDD</h3>
+                    Spock example:
+                    <pre><code>def "HashMap accepts null key"() {
+
+  given:
+        def map = new HashMap()
+
+  when:
+        map.put(null, "elem")
+
+  then:
+        notThrown(NullPointerException)
+}</code></pre>
+                </section>
+
+
+
+                <!-- Paweł -->
                 <section>
                 <table>
                     <tr>
@@ -172,12 +203,6 @@
                 </section>
 
                 <!-- Bartek -->
-                <section fullscreen-img="img/Human_evolution_scheme_1.png" fullscreen-size="contain">
-                    <div style="position: absolute"><small>
-                        http://commons.wikimedia.org/wiki/File:Human_evolution_scheme.svg
-                    </small>
-                    </div>
-                </section>
 
                 <section fullscreen-img="img/Human_evolution_scheme_2.png" fullscreen-size="contain">
                 </section>
@@ -523,24 +548,6 @@ def """should round <span class="highCode">#givenValue.class.simpleName #givenVa
                 </section>
 
                 <!-- Bartek -->
-                <section>
-                    <h4>Specification.thrown(...)</h4>
-<pre class="grayCode">def "should throw exception when try to insert null"() {
-
-    given:
-        def vendingMachine = new VendingMachine(Stub(ProductMagazine),
-        Stub(CoinCassette))
-
-    when:
-        vendingMachine.insert null
-
-    then:
-        def exception = <span class="highCode">thrown IllegalArgumentException</span>
-        exception.message == "coin can't be null"
-}</pre>
-                </section>
-
-                    <!-- Paweł -->
                     <section>
                         <h4>it's easy to look into thrown exception</h4>
 <pre class="grayCode">def "should throw exception when try to insert null"() {
@@ -651,19 +658,19 @@ def """should round <span class="highCode">#givenValue.class.simpleName #givenVa
                 <section>
                     <h3>Imagine that you have to stub this...</h3>
 <pre><code>
-    class DummyContainer {
+    interface DummyContainer {
 
-        String getString() {}
+        String getString();
 
-        Long getLong() {}
+        Long getLong();
 
-        BigDecimal getBigDecimal() {}
+        BigDecimal getBigDecimal();
 
-        List getList() {}
+        List getList();
 
-        VendingMachine getVendingMachine() {}
+        VendingMachine getVendingMachine();
 
-        DummyContainer getDummyContainer() {}
+        DummyContainer getDummyContainer();
     }
 
 </code></pre>
@@ -700,7 +707,6 @@ def """should round <span class="highCode">#givenValue.class.simpleName #givenVa
 
 
 <!--Groovy Goodness #################################################################################################-->
-<section>
                 <section>
                     <img src="img/groovy-logo-medium.png">
                     <h1>Goodnes</h1>
@@ -934,7 +940,6 @@ def "should correctly build DummyUser"() {
         json.stringsMap== [id1: "Spock", id2: "TestNG", id3: "JUnit"]
 }</pre>
                 </section>
-</section>
 
                 <section>
                     <h3>Groovy</h3>
